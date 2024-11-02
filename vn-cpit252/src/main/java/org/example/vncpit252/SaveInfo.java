@@ -1,8 +1,9 @@
 package org.example.vncpit252;
 
 
+import java.io.Serializable;
 
-public class SaveInfo {
+public class SaveInfo implements Serializable {
     private String name;
     private String mail;
     private String gender;

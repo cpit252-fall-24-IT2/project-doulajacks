@@ -1,4 +1,4 @@
-package org.example.vndesignpattern.scean_collection;
+package org.example.vncpit252.scean_collection;
 
-public class ProxyScean extends DesignPatterns{
+public class ProxyScean implements DesignPatterns{
 }
