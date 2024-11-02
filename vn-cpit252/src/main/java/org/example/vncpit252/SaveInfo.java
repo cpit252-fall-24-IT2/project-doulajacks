@@ -13,6 +13,7 @@ public class SaveInfo implements Serializable {
     private int age;
     private String intrest;
 
+    // Constructor that uses the SaveInfoBuilder to initialize fields
     public SaveInfo(SaveInfoBuilder saveInfoBuilder) {
         this.mail = saveInfoBuilder.mail;
         this.name = saveInfoBuilder.name;
@@ -20,11 +21,10 @@ public class SaveInfo implements Serializable {
         this.gender = saveInfoBuilder.gender;
         this.age = saveInfoBuilder.age;
         this.intrest = saveInfoBuilder.intrest;
-        this.badge = new Badge();
+        this.badge = new Badge(); // Creates a default Badge
     }
 
-
-
+    // Nested Builder class
     public static class SaveInfoBuilder {
         private String name;
         private String mail;
@@ -34,26 +34,32 @@ public class SaveInfo implements Serializable {
         private int age;
         private String intrest;
 
+        // Builder constructor with required fields
         public SaveInfoBuilder(String name, String mail, String gender) {
             this.name = name;
             this.mail = mail;
             this.gender = gender;
         }
-        public void withCountry(String country){
-            this.country=country;
-        }
-        public void withAge(int age){
-            this.age=age;
 
-        }
-        public void withIntrest(String intrest){
-            this.intrest=intrest;
+        // Methods to set optional fields
+        public SaveInfoBuilder withCountry(String country) {
+            this.country = country;
+            return this;
         }
 
-        public SaveInfo build(){
+        public SaveInfoBuilder withAge(int age) {
+            this.age = age;
+            return this;
+        }
+
+        public SaveInfoBuilder withIntrest(String intrest) {
+            this.intrest = intrest;
+            return this;
+        }
+
+        // Build method to create a SaveInfo instance
+        public SaveInfo build() {
             return new SaveInfo(this);
         }
     }
-
 }
-
