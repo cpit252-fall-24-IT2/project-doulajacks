@@ -1,4 +1,4 @@
-module org.example.vncpit252 {
+module org.example.vncpit {
     requires javafx.controls;
     requires javafx.fxml;
     requires javafx.web;

@@ -23,12 +23,25 @@ public class SaveInfo implements Serializable {
         this.intrest = saveInfoBuilder.intrest;
         this.badge = new Badge(); // Creates a default Badge
     }
+    @Override
+    public String toString() {
+        return "SaveInfoBuilder{" +
+                "name='" + name + '\'' +
+                ", mail='" + mail + '\'' +
+                ", gender='" + gender + '\'' +
+                ", country='" + country + '\'' +
+                ", age=" + age +
+                ", intrest='" + intrest + '\'' +
+                '}';
+    }
 
     // Nested Builder class
     public static class SaveInfoBuilder {
         private String name;
         private String mail;
         private String gender;
+
+
 
         private String country;
         private int age;
