@@ -24,8 +24,19 @@ public class Main extends Application {
 
     public static void main(String[] args) {
 
-        SaveInfo user1 =  new SaveInfo.SaveInfoBuilder("saeed","saeedappapp@gmail.com","Male").withIntrest("videoGames").withCountry("Saudi arabia").withAge(18).build();
+        SaveInfo user1 =  new SaveInfo.SaveInfoBuilder("saeed","saeedappapp@gmail.com","Male")
+                .withIntrest("videoGames")
+                .withCountry("Saudi arabia")
+                .withAge(21)
+                .build();
+        SaveInfo user2 = new SaveInfo.SaveInfoBuilder("Faris","faris.gmail.com","Male")
+                .withIntrest("Football")
+                .withCountry("Saudi Arabia")
+                .withAge(22)
+                .build();
         System.out.println(user1.toString());
+        System.out.println(user2.toString());
+
         launch();
     }
 }
