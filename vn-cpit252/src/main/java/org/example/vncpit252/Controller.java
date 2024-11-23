@@ -3,6 +3,7 @@ package org.example.vncpit252;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
@@ -22,10 +23,19 @@ public class Controller {
     protected void onHelloButtonClick() {
         welcomeText.setText("Welcome to JavaFX Application!");
     }
-    public void switchToScene1(ActionEvent event) throws IOException {
-        FXMLLoader.load(getClass().getResource("hello-view.fxml"));
+    public void switchToSceneHomeSave(@SuppressWarnings("exports") ActionEvent event) throws IOException {
+       root= FXMLLoader.load(getClass().getResource("save home page.fxml"));
+       stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+       scene = new Scene(root);
+       stage.setScene(scene);
+       stage.show();
     }
-    public void switchToScene2(ActionEvent event){
-
+    @SuppressWarnings("exports")
+    public void switchToHomePage(ActionEvent event) throws IOException{
+        root= FXMLLoader.load(getClass().getResource("home page.fxml"));
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        stage.setScene(scene);
+        stage.show();
     }
 }

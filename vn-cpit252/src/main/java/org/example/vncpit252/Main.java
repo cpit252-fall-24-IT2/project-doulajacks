@@ -11,9 +11,11 @@ import java.io.IOException;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-
+        String css = this.getClass().getResource("styleSheet.css").toExternalForm();
         Parent root =  FXMLLoader.load(getClass().getResource("base-dilog-layout.fxml"));
         Scene scene = new Scene(root);
+        scene.getStylesheets().add(css);
+        
         stage.setTitle("CPIT252 VN");
         stage.setScene(scene);
         stage.setResizable(false);

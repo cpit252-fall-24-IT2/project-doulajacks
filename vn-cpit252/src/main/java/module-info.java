@@ -10,6 +10,7 @@ module org.example.vncpit {
     requires org.kordamp.bootstrapfx.core;
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
+    requires javafx.graphics;
 
     opens org.example.vncpit252 to javafx.fxml;
     exports org.example.vncpit252;
