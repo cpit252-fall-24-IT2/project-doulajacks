@@ -1,0 +1,57 @@
+string dialog ="fkmasloolamsfoiasf|.asf,,afs,asfasffsfsad|fdfs.asfasfasfasffs|,asfasfasfasfasfasf"
+scaner
+string [] dialogarr =  dialog.split(|)
+arr1 =dialog[0] buiklder
+arr2=dialog[1] singletion
+arr3=dialog[2] factory
+
+
+
+
+
+--------------------------------------------------
+builder from 0 32 
+string dialog ="fkmasloolamsfoiasf|.asf,,afs,asfasffsfsad|fdfs.asfasfasfasffs|,asfasfasfasfasfasf"
+scaner
+string [] dialogarr =  dialog.split(|)
+
+
+-------------
+arr dialog
+int pointer
+textponter
+ @FXML
+    private TextArea textArea;
+  public void initialize() {
+        // Set text programmatically
+        if (ponter >32)
+        switch sean
+
+
+
+        textpotenr = dialog[ponter++]
+       
+        textArea.setText(textponter);
+    }
+    asfkmasf boid asdas(){
+pointer = 33
+
+
+    }
+    --------------------
+   
+    video 1 loop 
+---------------------------------------------------
+string 
+------------------
+text [|||||||||]
+int score3 ++ ++ ++
+flag pass = false
+if score > 3=
+flag >true
+
+score 0 
+flag false
+-----------------------------------
+[qustiobn]
+[answer]  [2,3,1,2,0,2,3,4]
