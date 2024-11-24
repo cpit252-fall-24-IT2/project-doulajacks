@@ -12,7 +12,7 @@
         <TextArea fx:id="dialog" layoutY="506.0" prefHeight="213.0" prefWidth="1181.0"  />
         <Button fx:id="nextDButtpn" layoutX="1128.0" layoutY="719.0" mnemonicParsing="false" text="next" />
       <Button layoutX="14.0" layoutY="719.0" mnemonicParsing="false" text="back" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="exit" />
+      <Button fx:id="exitID" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" stylesheets="@styleSheet.css" text="exit" />
       <Button fx:id="gotohome" layoutX="55.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSceneHomeSave" text="home" />
       <Label fx:id="titlest" layoutY="81.0" prefHeight="17.0" prefWidth="1181.0" text="lvl 1 95" />
     </children>

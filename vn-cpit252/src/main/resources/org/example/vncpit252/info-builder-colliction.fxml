@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import com.gluonhq.charm.glisten.control.TextField?>
+<!--<?import com.gluonhq.charm.glisten.control.TextField?>-->
+
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1181.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1181.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.Controller">
     <children>
         <ImageView fitHeight="454.0" fitWidth="1181.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
         <TextArea fx:id="dialog" layoutY="506.0" prefHeight="213.0" prefWidth="1181.0"  />
         <Button fx:id="nextDButtpn" layoutX="1128.0" layoutY="719.0" mnemonicParsing="false" text="next" />
       <Button layoutX="14.0" layoutY="719.0" mnemonicParsing="false" text="back" />
-      <Button layoutX="14.0" layoutY="14.0" mnemonicParsing="false" text="exit" />
-      <Button layoutX="55.0" layoutY="14.0" mnemonicParsing="false" text="home" />
+      <Button fx:id="exitID" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" stylesheets="@styleSheet.css" text="exit" />
+      <Button layoutX="55.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToSceneHomeSave" text="home" />
       <Label layoutX="608.0" layoutY="158.0" prefHeight="25.0" prefWidth="41.0" text="name" />
       <Label layoutX="608.0" layoutY="192.0" prefHeight="17.0" prefWidth="35.0" text="email" />
       <Label layoutX="602.0" layoutY="221.0" prefHeight="17.0" prefWidth="47.0" text="gender" />
-      <ChoiceBox layoutX="663.0" layoutY="217.0" prefWidth="150.0" />
-      <TextField layoutX="663.0" layoutY="158.0" />
-      <TextField layoutX="663.0" layoutY="188.0" />
+      <ChoiceBox fx:id="genderChoiceID" layoutX="664.0" layoutY="218.0" prefWidth="150.0" />
+      <TextField fx:id="nameEntryID" layoutX="664.0" layoutY="158.0" />
+      <TextField fx:id="emailEntryID" layoutX="664.0" layoutY="188.0" />
+      <Button fx:id="startButtonID" layoutX="718.0" layoutY="276.0" mnemonicParsing="false" onAction="#saveInfo" text="Start" />
+<!--      <TextField layoutX="663.0" layoutY="158.0" />-->
+<!--      <TextField layoutX="663.0" layoutY="188.0" />-->
     </children>
 </AnchorPane>
