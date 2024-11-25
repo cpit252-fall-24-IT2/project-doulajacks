@@ -71,9 +71,9 @@ public class Controller {
 
     @FXML
     void switchToQuizPage(ActionEvent event) throws IOException {
+        // Navigate to the quiz page
         switchScene(event, "quiz.fxml");
     }
-
 
     public void switchScene(ActionEvent event, String fxmlname) throws IOException {
         root = FXMLLoader.load(getClass().getResource(fxmlname));

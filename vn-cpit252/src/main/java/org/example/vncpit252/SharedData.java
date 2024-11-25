@@ -20,7 +20,7 @@ public class SharedData {
         dialogStrings = getArrStrings("/org/example/vncpit252/dialog.txt");
     }
 
-    public static void setQuestionStrings() throws IOException {
+    public static void setQuestionStrings(String s) throws IOException {
         questionStrings = getArrStrings("/org/example/vncpit252/question.txt");
     }
 

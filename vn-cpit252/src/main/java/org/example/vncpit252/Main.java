@@ -11,32 +11,35 @@ public class Main extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        // Load FXML and CSS
+        // Load initial FXML and CSS
         String css = this.getClass().getResource("styleSheet.css").toExternalForm();
-        Parent root = FXMLLoader.load(getClass().getResource("base-dilog-layout.fxml"));
+        Parent root = FXMLLoader.load(getClass().getResource("base-dilog-layout.fxml")); // Ensure this FXML navigates to quiz
         Scene scene = new Scene(root);
         scene.getStylesheets().add(css);
-        
+
         stage.setTitle("CPIT252 VN");
         stage.setScene(scene);
         stage.setResizable(false);
         stage.show();
 
-
+        // Run tests (can be wrapped in a debug flag for development only)
         new Test().runTests();
     }
 
     public static void main(String[] args) throws IOException {
-        SharedData.setQuestionStrings();
+        // Initialize quiz data
+        SharedData.setQuestionStrings("/question.txt");
+        SharedData.setAnswerStrings("/answer.txt");
+
+        // Print questions for debugging (optional, remove for production)
         String[] questions = SharedData.getQuestionStrings();
-        for (int i = 0; i < questions.length; i++) {
-            System.out.println(questions[i]);
+        for (String question : questions) {
+            System.out.println(question);
         }
 
-
-
-        SaveInfo user1 =  new SaveInfo.SaveInfoBuilder("saeed","saeedappapp@gmail.com","Male")
-                .withIntrest("videoGames")
+        // Example SaveInfo objects
+        SaveInfo user1 = new SaveInfo.SaveInfoBuilder("Saeed", "saeedappapp@gmail.com", "Male")
+                .withIntrest("Video Games")
                 .withCountry("Saudi Arabia")
                 .withAge(21)
                 .build();
@@ -46,11 +49,11 @@ public class Main extends Application {
                 .withAge(22)
                 .build();
 
+        // Print user information (optional, remove for production)
         System.out.println(user1.toString());
         System.out.println(user2.toString());
 
+        // Launch JavaFX application
         launch();
-
-
     }
 }
