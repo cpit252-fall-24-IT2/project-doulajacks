@@ -1,22 +1,19 @@
 package org.example.vncpit252;
 
-<<<<<<< HEAD
 import java.io.IOException;
 
-=======
 import javafx.application.Platform;
->>>>>>> bea9b451b591aee8e49ea309bbe42d12cbc35853
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
-import javafx.stage.Stage;
-import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextField;
+import javafx.stage.Stage;
 
 
 public class Controller {
@@ -40,29 +37,8 @@ public class Controller {
     private ChoiceBox<?> genderChoiceID;
 
 
-    @FXML
-    protected void onHelloButtonClick() {
-        welcomeText.setText("Welcome to JavaFX Application!");
-    }
-<<<<<<< HEAD
     
-=======
-
-    @FXML
-    void saveInfo(ActionEvent event) throws IOException {
-        SaveInfo currentInfo = new SaveInfo.SaveInfoBuilder(nameEntryID.getText(), emailEntryID.getText(), "male" /* Change this to ChoiceBox value */).build();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setUserData(currentInfo);
-        switchScene(event, "save home page.fxml");
-    }
-
-    @FXML
-    void printInfo(ActionEvent event) {
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        System.out.println(stage.getUserData());
-    }
-
->>>>>>> bea9b451b591aee8e49ea309bbe42d12cbc35853
+    
     public void switchToSceneHomeSave(@SuppressWarnings("exports") ActionEvent event) throws IOException {
        switchScene(event, "save home page.fxml");
     }
@@ -76,7 +52,7 @@ public class Controller {
         switchScene(event, "info-builder-colliction.fxml");
     }
 
-    public void switchScene(ActionEvent event, String fxmlname) throws IOException {
+    public void switchScene(@SuppressWarnings("exports") ActionEvent event, String fxmlname) throws IOException {
         root= FXMLLoader.load(getClass().getResource(fxmlname));
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         scene = new Scene(root);

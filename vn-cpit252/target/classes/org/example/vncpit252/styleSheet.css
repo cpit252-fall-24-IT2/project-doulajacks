@@ -2,6 +2,11 @@
     -fx-background-color: #222222
 
 }
+
+#exitID {
+    -fx-background-color: #c9c5c5;
+}
+
 .label{
 
 }
