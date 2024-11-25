@@ -12,7 +12,7 @@ public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
         String css = this.getClass().getResource("styleSheet.css").toExternalForm();
-        Parent root =  FXMLLoader.load(getClass().getResource("base-dilog-layout.fxml"));
+        Parent root =  FXMLLoader.load(getClass().getResource("home page.fxml"));
         Scene scene = new Scene(root);
         scene.getStylesheets().add(css);
         

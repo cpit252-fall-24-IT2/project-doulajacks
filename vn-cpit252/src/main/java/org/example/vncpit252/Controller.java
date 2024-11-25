@@ -22,6 +22,10 @@ public class Controller {
     private Scene scene;
     private Parent root;
 
+
+    private int pointer=0;
+
+
     @FXML
     private Label welcomeText;
     @FXML
@@ -63,6 +67,10 @@ public class Controller {
     @FXML
     void switchToInfoPage(ActionEvent event) throws IOException {
         switchScene(event, "info-builder-colliction.fxml");
+    }
+    @FXML
+    void switchToLoeadHomePage(ActionEvent event) throws IOException {
+        switchScene(event, "save home page.fxml");
     }
 
     public void switchScene(@SuppressWarnings("exports") ActionEvent event, String fxmlname) throws IOException {

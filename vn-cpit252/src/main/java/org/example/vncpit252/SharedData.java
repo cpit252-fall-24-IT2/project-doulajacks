@@ -1,9 +1,12 @@
 package org.example.vncpit252;
 
-import java.io.FileNotFoundException;
+import java.io.BufferedReader;
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.io.BufferedReader;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
 
 public class SharedData {
@@ -11,6 +14,7 @@ public class SharedData {
     private static String[] questionStrings = null;
     private static String[] answerStrings = null;
     private static String[] videoStrings = null;
+    private static SaveInfo saveInfo = null;
 
     public static void setDialogStrings() throws IOException {
         dialogStrings = getArrStrings("/org/example/vncpit252/dialog.txt");
@@ -55,9 +59,7 @@ public class SharedData {
         try (InputStreamReader fr = new InputStreamReader(
                 SharedData.class.getResourceAsStream(pathh), StandardCharsets.UTF_8)) {
 
-            if (fr == null) {
-                throw new FileNotFoundException("Resource not found: " + pathh);
-            }
+           
 
             BufferedReader reader = new BufferedReader(fr);
             StringBuilder content = new StringBuilder();
@@ -72,5 +74,19 @@ public class SharedData {
         }
 
         return arr;
+    }
+    public static void readOBJ() throws Exception{
+        try(var out = new ObjectOutputStream(new FileOutputStream("Save.dat")) ){
+            out.writeObject(saveInfo);
+        }
+
+    }
+    public static void writedOBJ(){
+        try (var in = new ObjectInputStream( new FileInputStream("Save.dat"))) {
+           saveInfo = (SaveInfo) in.readObject();
+        } catch (Exception e) {
+            // TODO: handle exception
+        }
+
     }
 }

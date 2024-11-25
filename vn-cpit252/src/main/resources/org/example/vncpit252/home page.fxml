@@ -5,7 +5,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1181.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.Controller">
    <children>
-      <Button layoutX="536.0" layoutY="353.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Button" />
+      <Button layoutX="536.0" layoutY="353.0" mnemonicParsing="false" onAction="#switchToLoeadHomePage" prefHeight="52.0" prefWidth="109.0" text="Load" />
       <Button layoutX="536.0" layoutY="262.0" mnemonicParsing="false" onAction="#switchToInfoPage" prefHeight="52.0" prefWidth="109.0" text="New Save" />
       <Button layoutX="536.0" layoutY="444.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Button" />
    </children>
