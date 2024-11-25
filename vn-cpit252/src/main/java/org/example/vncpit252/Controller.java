@@ -37,7 +37,19 @@ public class Controller {
     private ChoiceBox<?> genderChoiceID;
 
 
-    
+    @FXML
+    void saveInfo(ActionEvent event) throws IOException {
+        SaveInfo currentInfo = new SaveInfo.SaveInfoBuilder(nameEntryID.getText(), emailEntryID.getText(), "male" /* Change this to ChoiceBox value */).build();
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        stage.setUserData(currentInfo);
+        switchScene(event, "save home page.fxml");
+    }
+
+    @FXML
+    void printInfo(ActionEvent event) {
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        System.out.println(stage.getUserData());
+    }
     
     public void switchToSceneHomeSave(@SuppressWarnings("exports") ActionEvent event) throws IOException {
        switchScene(event, "save home page.fxml");
@@ -46,6 +58,7 @@ public class Controller {
     public void switchToHomePage(ActionEvent event) throws IOException{
         switchScene(event, "home page.fxml");
     }
+    
 
     @FXML
     void switchToInfoPage(ActionEvent event) throws IOException {
