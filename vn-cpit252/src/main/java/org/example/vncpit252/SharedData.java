@@ -24,7 +24,7 @@ public class SharedData {
         questionStrings = getArrStrings("/org/example/vncpit252/question.txt");
     }
 
-    public static void setAnswerStrings() throws IOException {
+    public static void setAnswerStrings(String s) throws IOException {
         answerStrings = getArrStrings("/org/example/vncpit252/answer.txt");
     }
 

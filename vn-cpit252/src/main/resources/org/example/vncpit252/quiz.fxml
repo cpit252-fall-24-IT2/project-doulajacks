@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.QuizController"
+      alignment="CENTER" spacing="15" style="-fx-background-color: #f4f4f4; -fx-padding: 20;">
+
+    <!-- Title Section -->
+    <Label text="Design Patterns Quiz" style="-fx-font-size: 24; -fx-text-fill: #333;" />
+
+    <!-- Question Display Section -->
+    <Label fx:id="questionLabel" wrapText="true" maxWidth="600" text="Question will appear here..."
+           style="-fx-font-size: 18; -fx-text-fill: #555; -fx-padding: 10;" />
+
+    <!-- Answer Input Section -->
+    <TextField fx:id="answerField" promptText="Type your answer here..."
+               maxWidth="400" style="-fx-font-size: 16; -fx-padding: 8;" />
+
+    <!-- Navigation Buttons -->
+    <HBox spacing="20" alignment="CENTER" style="-fx-padding: 10;">
+        <Button fx:id="nextButton" text="Next" onAction="#onNextButtonClick"
+                style="-fx-background-color: #6c63ff; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20;" />
+        <Button fx:id="submitButton" text="Submit" onAction="#onSubmitButtonClick"
+                style="-fx-background-color: #28a745; -fx-text-fill: white; -fx-font-size: 14; -fx-padding: 10 20;"
+                disable="true" />
+    </HBox>
+
+    <!-- Feedback Section -->
+    <Label fx:id="feedbackLabel" wrapText="true" maxWidth="600" text=""
+           style="-fx-font-size: 16; -fx-text-fill: #888;" />
+
+</VBox>
