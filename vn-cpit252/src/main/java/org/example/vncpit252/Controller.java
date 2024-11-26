@@ -29,13 +29,6 @@ public class Controller {
      TextArea plzwork;
     @FXML 
      Button exitID ;
-    
-  
-    
-    
-
-    
-    
 
     @FXML
      TextField nameEntryID;
@@ -70,43 +63,56 @@ public class Controller {
     public void switchToDialog(ActionEvent event) throws Exception {
         switchScene(event, "dialog_Show.fxml");
     }
+    public void switchToScene(Scene newScene) {
+        Stage stage = (Stage) scene.getWindow();
+        stage.setScene(newScene);
+    }
+    public void switchToLoadHomePageWithoutEvent() {
+        try {
+            // Load the FXML file for "load home page"
+            Parent root = FXMLLoader.load(getClass().getResource("load_home_page.fxml"));
+
+            // Retrieve the current stage
+            Stage stage = (Stage) plzwork.getScene().getWindow(); // Replace 'plzwork' with any valid node in your scene
+
+            // Set the new scene
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Log the exception for debugging
+        }
+    }
 
     @FXML
     public void singletinoScean(ActionEvent event) throws Exception {
         SharedData.setPointer(0);
         SharedData.setIntalFlag(0);
         SharedData.setLastFlag(9);
-        
-        
         switchScene(event, "dialog_Show.fxml");
-        setText();
-        
-        
-        
-        
+       
     }
 
-
-        
     
-    
-        @FXML
-        public void setText() {
-   
-
-   
-
-        
+       
+        public void UpdateText() {
+            
             plzwork.setText(dialogStrings[SharedData.getPointer()]);  // Clear any existing text
+            SharedData.setPointer(SharedData.getPointer()+1);
             plzwork.setEditable(false);
             plzwork.setWrapText(true);
-            
-        
-
-        
-    
-    
-}
+    }
+    public void goBackText() throws Exception {
+        if (SharedData.getPointer() > SharedData.getIntalFlag()) { 
+          
+            SharedData.setPointer(SharedData.getPointer() - 1);
+            plzwork.setText(dialogStrings[SharedData.getPointer()]);
+            plzwork.setEditable(false);
+            plzwork.setWrapText(true);
+        } else {
+            switchToLoadHomePageWithoutEvent();
+        }
+    }
 
     public void switchScene(ActionEvent event, String fxmlname) throws IOException {
         try {
@@ -119,7 +125,6 @@ public class Controller {
             e.printStackTrace();  // Add this line for debugging
         }
     }
-    
 
     public void exit() {
         SharedData.writedOBJ();
