@@ -9,7 +9,8 @@ import javafx.scene.control.ToggleGroup;
 public class QuizController {
     String[] questions = SharedData.getQuestionStrings();
     String[] answers = SharedData.getAnswerStrings();
-    private int currentIndex = 0; // Tracks the current question index
+    private int currentIndex = 0;
+    private int quizScore = 0; // Tracks the current question index
     
     @FXML
     private Label questionLabel;

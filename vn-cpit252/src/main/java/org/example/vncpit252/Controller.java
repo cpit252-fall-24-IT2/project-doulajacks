@@ -2,6 +2,10 @@ package org.example.vncpit252;
 
 import java.io.IOException;
 
+import javafx.animation.Interpolator;
+import javafx.animation.KeyFrame;
+import javafx.animation.KeyValue;
+import javafx.animation.Timeline;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -14,6 +18,7 @@ import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class Controller {
     // Arrays of text and important paths
@@ -38,34 +43,43 @@ public class Controller {
 
     @FXML
      ChoiceBox<?> genderChoiceID;
+     //time line so we can resit it
+     Timeline tl;
     
-
-   
-
-    @FXML
-    public void switchToHomePage(ActionEvent event) throws IOException {
-        switchScene(event, "home_page.fxml");
-        
-    }
-
-    public void switchToInfoPage(ActionEvent event) throws IOException {
-        switchScene(event, "getData.fxml");
-    }
-
-    public void switchToLoeadHomePage(ActionEvent event) throws IOException {
-        switchScene(event, "load_home_page.fxml");
-    }
-
-    public void switchToQuizPage(ActionEvent event) throws IOException {
-        switchScene(event, "quiz.fxml");
-    }
-
-    public void switchToDialog(ActionEvent event) throws Exception {
-        switchScene(event, "dialog_Show.fxml");
+    //switchin scean related methouds
+    public void switchScene(ActionEvent event, String fxmlname) throws IOException {
+        try {
+            String css = this.getClass().getResource("/org/example/vncpit252/styleSheet.css").toExternalForm();
+            root = FXMLLoader.load(getClass().getResource(fxmlname));
+            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            scene = new Scene(root);
+            scene.getStylesheets().add(css);
+            stage.setScene(scene);
+            stage.show();
+            
+        } catch (IOException e) {
+            e.printStackTrace();  // Add this line for debugging
+        }
     }
     public void switchToScene(Scene newScene) {
         Stage stage = (Stage) scene.getWindow();
-        stage.setScene(newScene);
+     }
+    public void switchToHomePage(ActionEvent event) throws IOException {
+        SharedData.writedOBJ();
+        switchScene(event, "home_page.fxml");
+        
+    }
+    public void switchToInfoPage(ActionEvent event) throws IOException {
+        switchScene(event, "getData.fxml");
+    }
+    public void switchToQuizPage(ActionEvent event) throws IOException {
+        switchScene(event, "quiz.fxml");
+    }
+    public void switchToDialog(ActionEvent event) throws Exception {
+        switchScene(event, "dialog_Show.fxml");
+    }
+    public void switchToLoeadHomePage(ActionEvent event) throws IOException {
+        switchScene(event, "load_home_page.fxml");
     }
     public void switchToLoadHomePageWithoutEvent() {
         try {
@@ -83,8 +97,6 @@ public class Controller {
             e.printStackTrace(); // Log the exception for debugging
         }
     }
-
-    @FXML
     public void singletinoScean(ActionEvent event) throws Exception {
         SharedData.setPointer(0);
         SharedData.setIntalFlag(0);
@@ -92,47 +104,71 @@ public class Controller {
         switchScene(event, "dialog_Show.fxml");
        
     }
+    // end of switchin sean  related methouds 
 
-    
-       
-        public void UpdateText() {
-            
-            plzwork.setText(dialogStrings[SharedData.getPointer()]);  // Clear any existing text
-            SharedData.setPointer(SharedData.getPointer()+1);
-            plzwork.setEditable(false);
-            plzwork.setWrapText(true);
+
+
+    // text relatex methouds
+    private void stopCurrentAnimation() {
+        if (tl != null && tl.getStatus() == Timeline.Status.RUNNING) {
+            tl.stop();  // Stop the animation if it's running
+        }
     }
-    public void goBackText() throws Exception {
-        if (SharedData.getPointer() > SharedData.getIntalFlag()) { 
-          
-            SharedData.setPointer(SharedData.getPointer() - 1);
-            plzwork.setText(dialogStrings[SharedData.getPointer()]);
+    public void animationText(String str){
+        
+        stopCurrentAnimation();
+        String dialogue = str;  // The dialogue string
+        plzwork.setText("");  // Initially set the TextArea to be empty
+
+        tl = new Timeline();
+
+        for (int i = 0; i < dialogue.length(); i++) {
+            // Create a KeyFrame for each character to be displayed
+            final int index = i;
+            Duration duration = Duration.millis(index * 50);  // Duration for each character
+            KeyValue keyValue = new KeyValue(plzwork.textProperty(), dialogue.substring(0, index + 1), Interpolator.LINEAR);
+            KeyFrame keyFrame = new KeyFrame(duration, keyValue);
+            tl.getKeyFrames().add(keyFrame);
+            }
+
+        tl.setCycleCount(1);  // Play once
+        tl.play();  // Start the timeline
+
+    }
+    public void UpdateText() {
+            if (SharedData.getPointer() <= SharedData.getLastFlag()) {
+                
+            animationText(dialogStrings[SharedData.getPointer()]);
+            SharedData.setPointer(SharedData.getPointer()+1);
             plzwork.setEditable(false);
             plzwork.setWrapText(true);
         } else {
             switchToLoadHomePageWithoutEvent();
         }
     }
-
-    public void switchScene(ActionEvent event, String fxmlname) throws IOException {
-        try {
-            String css = this.getClass().getResource("/org/example/vncpit252/styleSheet.css").toExternalForm();
-            root = FXMLLoader.load(getClass().getResource(fxmlname));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            scene.getStylesheets().add(css);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();  // Add this line for debugging
+    public void goBackText() throws Exception {
+        if (SharedData.getPointer() > SharedData.getIntalFlag()) { 
+          
+            SharedData.setPointer(SharedData.getPointer() - 1);
+            
+            animationText(dialogStrings[SharedData.getPointer()]);
+            plzwork.setEditable(false);
+            plzwork.setWrapText(true);
+        } else {
+            switchToLoadHomePageWithoutEvent();
         }
     }
+    // end of text related methouds
 
+// exit and save
     public void exit() {
         SharedData.writedOBJ();
         Platform.exit();
     }
+// exit and save
 
+
+//stil not functional enph
     @FXML
     void saveInfo(ActionEvent event) throws IOException {
         SaveInfo currentInfo = new SaveInfo.SaveInfoBuilder(nameEntryID.getText(), emailEntryID.getText(), "male" /* Change this to ChoiceBox value */).build();
@@ -146,4 +182,5 @@ public class Controller {
         stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         System.out.println(stage.getUserData());
     }
+    //// end of stil not functional enph
 }
