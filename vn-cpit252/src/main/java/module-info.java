@@ -11,6 +11,7 @@ module org.example.vncpit {
     requires eu.hansolo.tilesfx;
     requires com.almasb.fxgl.all;
     requires javafx.graphics;
+    requires javafx.base;
 
     opens org.example.vncpit252 to javafx.fxml;
     exports org.example.vncpit252;

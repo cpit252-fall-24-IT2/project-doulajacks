@@ -6,10 +6,11 @@ import javafx.scene.control.Label;
 import javafx.scene.control.RadioButton;
 import javafx.scene.control.ToggleGroup;
 
-import java.io.IOException;
-
 public class QuizController {
-
+    String[] questions = SharedData.getQuestionStrings();
+    String[] answers = SharedData.getAnswerStrings();
+    private int currentIndex = 0; // Tracks the current question index
+    
     @FXML
     private Label questionLabel;
 
@@ -28,9 +29,8 @@ public class QuizController {
     @FXML
     private Label feedbackLabel;
 
-    private String[] questions; // Array to hold quiz questions
-    private String[] answers;   // Array to hold correct answers
-    private int currentIndex = 0; // Tracks the current question index
+    
+    
 
     public void initialize() {
         // Ensure ToggleGroup is set up
@@ -40,18 +40,8 @@ public class QuizController {
             falseOption.setToggleGroup(answerToggleGroup);
         }
 
-        try {
-            // Load questions and answers
-            SharedData.setQuestionStrings("/question.txt");
-            SharedData.setAnswerStrings("/answer.txt");
-            questions = SharedData.getQuestionStrings();
-            answers = SharedData.getAnswerStrings();
-
-            if (questions.length > 0) {
-                showQuestion(); // Display the first question
-            }
-        } catch (IOException e) {
-            feedbackLabel.setText("Error loading questions or answers.");
+        if (questions.length > 0) {
+            showQuestion(); // Display the first question
         }
     }
 

@@ -15,40 +15,89 @@ public class SharedData {
     private static String[] answerStrings = null;
     private static String[] videoStrings = null;
     private static SaveInfo saveInfo = null;
+    private static int pointer=0;
+    private static int intalFlag=0;
+    private static int lastFlag=0;
 
+
+
+
+
+   
+   
+   
+   
+    
+
+    
+
+    
+
+    
+
+    
+    
+    
+   
+    //setters
     public static void setDialogStrings() throws IOException {
         dialogStrings = getArrStrings("/org/example/vncpit252/dialog.txt");
     }
-
-    public static void setQuestionStrings(String s) throws IOException {
+    public static void setQuestionStrings() throws IOException {
         questionStrings = getArrStrings("/org/example/vncpit252/question.txt");
     }
-
-    public static void setAnswerStrings(String s) throws IOException {
+    public static void setAnswerStrings() throws IOException {
         answerStrings = getArrStrings("/org/example/vncpit252/answer.txt");
     }
-
     public static void setVideoStrings() throws IOException {
         videoStrings = getArrStrings("/org/example/vncpit252/video.txt");
     }
+    public static void setPointer(int pointer) {
+        SharedData.pointer = pointer;
+    }
+    public static void setIntalFlag(int intalFlag) {
+        SharedData.intalFlag = intalFlag;
+    }
+    public static void setLastFlag(int lastFlag) {
+        SharedData.lastFlag = lastFlag;
+    }
+    
+    
+     
+   
 
-    // Getters for testing
+    // Getters 
     public static String[] getDialogStrings() {
         return dialogStrings;
     }
-
     public static String[] getQuestionStrings() {
         return questionStrings;
     }
-
     public static String[] getAnswerStrings() {
         return answerStrings;
     }
-
     public static String[] getVideoStrings() {
         return videoStrings;
     }
+    public static int getPointer() {
+        return pointer;
+    }
+    public static int getIntalFlag() {
+        return intalFlag;
+    }
+    public static int getLastFlag() {
+        
+        return lastFlag;
+    }
+   
 
+
+
+
+
+
+
+    // fetch data from txt methoud
     private static String[] getArrStrings(String pathh) throws IOException {
         if (pathh == null || pathh.isEmpty()) {
             throw new IllegalArgumentException("Path cannot be null or empty.");
@@ -75,6 +124,10 @@ public class SharedData {
 
         return arr;
     }
+    
+    
+
+    //read and write objec to presarve save
     public static void readOBJ() throws Exception{
         try(var out = new ObjectOutputStream(new FileOutputStream("Save.dat")) ){
             out.writeObject(saveInfo);
@@ -89,4 +142,6 @@ public class SharedData {
         }
 
     }
+
+
 }
