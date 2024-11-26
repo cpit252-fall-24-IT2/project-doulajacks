@@ -72,9 +72,10 @@ public class Controller {
         switchScene(event, "dialog_Show.fxml");
     }
 
+    
         @FXML
         public void setText() {
-            plzwork.setText(dialogStrings[SharedData.getPointer()]);// Clear any existing text
+            plzwork.setText(dialogStrings[SharedData.getPointer()]);  // Clear any existing text
             SharedData.setPointer(SharedData.getPointer()+1);
             plzwork.setEditable(false);
             plzwork.setWrapText(true);
