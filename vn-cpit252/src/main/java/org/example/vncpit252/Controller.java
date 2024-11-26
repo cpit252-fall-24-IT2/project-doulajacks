@@ -100,6 +100,7 @@ public class Controller {
             plzwork.setText(dialogStrings[SharedData.getPointer()]);  // Clear any existing text
             plzwork.setEditable(false);
             plzwork.setWrapText(true);
+            
         
 
         
@@ -118,6 +119,7 @@ public class Controller {
             e.printStackTrace();  // Add this line for debugging
         }
     }
+    
 
     public void exit() {
         SharedData.writedOBJ();
