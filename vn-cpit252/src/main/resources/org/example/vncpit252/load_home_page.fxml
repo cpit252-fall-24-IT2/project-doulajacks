@@ -14,7 +14,7 @@
       <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="14.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="14.0" layoutY="141.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="244.0" text="Button" />
       <Button layoutX="22.0" layoutY="309.0" mnemonicParsing="false" onAction="#singletinoScean" text="tutorial" />
-      <Button layoutX="83.0" layoutY="309.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
+      <Button layoutX="83.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchToLearningResources" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
       <Button layoutX="209.0" layoutY="309.0" mnemonicParsing="false" onAction="#switchToQuizPage" text="quizz" />
       <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="327.0" layoutY="141.0" pickOnBounds="true" preserveRatio="true" />
       <Button layoutX="327.0" layoutY="141.0" mnemonicParsing="false" prefHeight="150.0" prefWidth="244.0" text="Button" />

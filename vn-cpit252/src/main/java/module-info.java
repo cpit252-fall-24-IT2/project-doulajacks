@@ -12,6 +12,7 @@ module org.example.vncpit {
     requires com.almasb.fxgl.all;
     requires javafx.graphics;
     requires javafx.base;
+    requires java.desktop;
 
     opens org.example.vncpit252 to javafx.fxml;
     exports org.example.vncpit252;

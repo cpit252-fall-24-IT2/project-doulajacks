@@ -19,26 +19,6 @@ public class SharedData {
     private static int intalFlag=0;
     private static int lastFlag=0;
 
-
-
-
-
-   
-   
-   
-   
-    
-
-    
-
-    
-
-    
-
-    
-    
-    
-   
     //setters
     public static void setDialogStrings() throws IOException {
         dialogStrings = getArrStrings("/org/example/vncpit252/dialog.txt");
@@ -61,10 +41,8 @@ public class SharedData {
     public static void setLastFlag(int lastFlag) {
         SharedData.lastFlag = lastFlag;
     }
-    
-    
-     
-   
+
+
 
     // Getters 
     public static String[] getDialogStrings() {
@@ -90,12 +68,6 @@ public class SharedData {
         return lastFlag;
     }
    
-
-
-
-
-
-
 
     // fetch data from txt methoud
     private static String[] getArrStrings(String pathh) throws IOException {

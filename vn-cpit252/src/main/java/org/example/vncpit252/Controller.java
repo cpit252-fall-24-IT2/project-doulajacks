@@ -64,6 +64,10 @@ public class Controller {
         switchScene(event, "dialog_Show.fxml");
     }
 
+    public void switchToLearningResources(ActionEvent event) throws IOException {
+        switchScene(event, "learning_resources_page.fxml");
+    }
+
     @FXML
     public void singletinoScean(ActionEvent event) throws Exception {
         SharedData.setPointer(0);

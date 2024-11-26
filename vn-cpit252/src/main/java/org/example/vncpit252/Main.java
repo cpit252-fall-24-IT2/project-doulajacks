@@ -28,10 +28,6 @@ public class Main extends Application {
             e.printStackTrace();
             System.out.println("Error loading FXML file.");
         }
-        
-
-
-
     }
 
     public static void main(String[] args) throws IOException {
