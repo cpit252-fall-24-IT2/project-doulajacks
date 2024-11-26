@@ -79,7 +79,7 @@ public class Controller {
         
         
         switchScene(event, "dialog_Show.fxml");
-        
+        setText();
         
         
         
