@@ -8,6 +8,5 @@
       <Button layoutX="536.0" layoutY="353.0" mnemonicParsing="false" onAction="#switchToLoeadHomePage" prefHeight="52.0" prefWidth="109.0" text="Load" />
       <Button layoutX="536.0" layoutY="262.0" mnemonicParsing="false" onAction="#switchToInfoPage" prefHeight="52.0" prefWidth="109.0" text="New Save" />
       <Button layoutX="536.0" layoutY="444.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="109.0" text="Button" />
-      <Button layoutX="536.0" layoutY="535.0" mnemonicParsing="false" onAction="#switchToQuizPage" prefHeight="52.0" prefWidth="109.0" text="Quiz" />
    </children>
 </AnchorPane>
