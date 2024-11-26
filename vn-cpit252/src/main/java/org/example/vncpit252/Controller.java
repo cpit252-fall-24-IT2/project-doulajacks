@@ -116,9 +116,11 @@ public class Controller {
 
     public void switchScene(ActionEvent event, String fxmlname) throws IOException {
         try {
+            String css = this.getClass().getResource("/org/example/vncpit252/styleSheet.css").toExternalForm();
             root = FXMLLoader.load(getClass().getResource(fxmlname));
             stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
             scene = new Scene(root);
+            scene.getStylesheets().add(css);
             stage.setScene(scene);
             stage.show();
         } catch (IOException e) {

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.effect.ImageInput?>
@@ -16,20 +17,20 @@
       <AnchorPane layoutX="313.0" layoutY="138.0" prefHeight="217.0" prefWidth="244.0">
          <children>
             <Button layoutY="191.0" mnemonicParsing="false" onAction="#singletinoScean" text="tutorial" />
-            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="244.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@photo-fiels/white-house.jpg" />
                </image>
             </ImageView>
             <Button layoutX="62.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
             <Button layoutX="190.0" layoutY="191.0" mnemonicParsing="false" onAction="#switchToQuizPage" text="quizz" />
-            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="Label" />
+            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="The singleton design pattern" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="30.0" layoutY="138.0" prefHeight="217.0" prefWidth="244.0">
          <children>
             <Button layoutY="191.0" mnemonicParsing="false" text="tutorial" />
-            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="150.0" fitWidth="244.0" layoutY="34.0" pickOnBounds="true">
                <effect>
                   <ImageInput>
                      <source>
@@ -37,113 +38,96 @@
                      </source>
                   </ImageInput>
                </effect>
+               <image>
+                  <Image url="@photo-fiels/ice-cream.jpg" />
+               </image>
             </ImageView>
             <Button layoutX="62.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
             <Button layoutX="190.0" layoutY="191.0" mnemonicParsing="false" text="quizz" />
-            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="Label" />
+            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="The builder design pattern" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="578.0" layoutY="138.0" prefHeight="217.0" prefWidth="244.0">
          <children>
             <Button layoutY="191.0" mnemonicParsing="false" text="tutorial" />
-            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <effect>
-                  <ImageInput>
-                     <source>
-                        <Image url="file:/C:/code/cpit252/project-doulajacks/vn-cpit252/src/main/resources/org/example/vncpit252/photo-fiels/ice-cream.jpg" />
-                     </source>
-                  </ImageInput>
-               </effect>
+            <ImageView fitHeight="150.0" fitWidth="244.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <image>
+                  <Image url="@photo-fiels/prototype-3x.jpg" />
+               </image>
             </ImageView>
             <Button layoutX="62.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
             <Button layoutX="190.0" layoutY="191.0" mnemonicParsing="false" text="quizz" />
-            <Label fx:id="lableID1" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="Label" />
+            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="The prototype design pattern" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="842.0" layoutY="138.0" prefHeight="217.0" prefWidth="244.0">
          <children>
             <Button layoutY="191.0" mnemonicParsing="false" text="tutorial" />
-            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <effect>
-                  <ImageInput>
-                     <source>
-                        <Image url="file:/C:/code/cpit252/project-doulajacks/vn-cpit252/src/main/resources/org/example/vncpit252/photo-fiels/ice-cream.jpg" />
-                     </source>
-                  </ImageInput>
-               </effect>
+            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="-2.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@photo-fiels/adapter.jpg" />
+               </image>
             </ImageView>
             <Button layoutX="62.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
             <Button layoutX="190.0" layoutY="191.0" mnemonicParsing="false" text="quizz" />
-            <Label fx:id="lableID2" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="Label" />
+            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="The Adapter Design Pattern" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="30.0" layoutY="371.0" prefHeight="217.0" prefWidth="244.0">
          <children>
             <Button layoutY="191.0" mnemonicParsing="false" text="tutorial" />
-            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <effect>
-                  <ImageInput>
-                     <source>
-                        <Image url="file:/C:/code/cpit252/project-doulajacks/vn-cpit252/src/main/resources/org/example/vncpit252/photo-fiels/ice-cream.jpg" />
-                     </source>
-                  </ImageInput>
-               </effect>
+            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="5.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@photo-fiels/dectator.jpg" />
+               </image>
             </ImageView>
             <Button layoutX="62.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
             <Button layoutX="190.0" layoutY="191.0" mnemonicParsing="false" text="quizz" />
-            <Label fx:id="lableID3" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="Label" />
+            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="The Decorator Design Pattern" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="309.0" layoutY="371.0" prefHeight="217.0" prefWidth="244.0">
          <children>
             <Button layoutY="191.0" mnemonicParsing="false" text="tutorial" />
-            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <effect>
-                  <ImageInput>
-                     <source>
-                        <Image url="file:/C:/code/cpit252/project-doulajacks/vn-cpit252/src/main/resources/org/example/vncpit252/photo-fiels/ice-cream.jpg" />
-                     </source>
-                  </ImageInput>
-               </effect>
+            <ImageView fitHeight="150.0" fitWidth="244.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@photo-fiels/flyweight.jpg" />
+               </image>
             </ImageView>
             <Button layoutX="62.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
             <Button layoutX="190.0" layoutY="191.0" mnemonicParsing="false" text="quizz" />
-            <Label fx:id="lableID4" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="Label" />
+            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="The Flyweight Design Pattern" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="578.0" layoutY="371.0" prefHeight="217.0" prefWidth="244.0">
          <children>
             <Button layoutY="191.0" mnemonicParsing="false" text="tutorial" />
-            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <effect>
-                  <ImageInput>
-                     <source>
-                        <Image url="file:/C:/code/cpit252/project-doulajacks/vn-cpit252/src/main/resources/org/example/vncpit252/photo-fiels/ice-cream.jpg" />
-                     </source>
-                  </ImageInput>
-               </effect>
+            <ImageView fitHeight="150.0" fitWidth="244.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@photo-fiels/proxy.jpg" />
+               </image>
             </ImageView>
             <Button layoutX="62.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
             <Button layoutX="190.0" layoutY="191.0" mnemonicParsing="false" text="quizz" />
-            <Label fx:id="lableID5" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="Label" />
+            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="The Proxy Design Pattern" />
          </children>
       </AnchorPane>
       <AnchorPane layoutX="842.0" layoutY="371.0" prefHeight="217.0" prefWidth="244.0">
          <children>
             <Button layoutY="191.0" mnemonicParsing="false" text="tutorial" />
-            <ImageView fitHeight="150.0" fitWidth="244.0" layoutX="9.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
-               <effect>
-                  <ImageInput>
-                     <source>
-                        <Image url="file:/C:/code/cpit252/project-doulajacks/vn-cpit252/src/main/resources/org/example/vncpit252/photo-fiels/ice-cream.jpg" />
-                     </source>
-                  </ImageInput>
-               </effect>
+            <ImageView fitHeight="150.0" fitWidth="244.0" layoutY="34.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@photo-fiels/observer.jpg" />
+               </image>
             </ImageView>
             <Button layoutX="62.0" layoutY="192.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="119.0" text="learning resources" />
             <Button layoutX="190.0" layoutY="191.0" mnemonicParsing="false" text="quizz" />
-            <Label fx:id="lableID6" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text="Label" />
+            <Label fx:id="lableID" layoutX="-2.0" layoutY="14.0" prefHeight="17.0" prefWidth="244.0" text=" The Observer Design Pattern" />
          </children>
       </AnchorPane>
+      <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="163.0" layoutY="-26.0" pickOnBounds="true" preserveRatio="true" />
     </children>
 </AnchorPane>
