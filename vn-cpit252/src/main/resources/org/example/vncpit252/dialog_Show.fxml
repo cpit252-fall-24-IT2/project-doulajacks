@@ -3,19 +3,17 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1181.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.Controller">
     <children>
       <ImageView fitHeight="454.0" fitWidth="1181.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="nextDButtpn" layoutX="1128.0" layoutY="719.0" mnemonicParsing="false" onAction="#setText" text="next" />
-      <Button layoutX="14.0" layoutY="719.0" mnemonicParsing="false" text="back" />
+      <Button fx:id="nextDButtpn" layoutX="1128.0" layoutY="719.0" mnemonicParsing="false" onAction="#UpdateText" text="next" />
+      <Button layoutX="14.0" layoutY="719.0" mnemonicParsing="false" onAction="#goBackText" text="back" />
       <Button fx:id="exitID" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" stylesheets="@../../../../../../../../project-doulajacks/vn-cpit252/src/main/resources/org/example/vncpit252/styleSheet.css" text="exit" />
       <Button fx:id="gotohome" layoutX="55.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomePage" text="home" />
       <Label fx:id="titlest" layoutY="81.0" prefHeight="17.0" prefWidth="1181.0" text="lvl 1 95" />
-      <TextArea fx:id="plzwork" layoutY="506.0" prefHeight="213.0" prefWidth="1181.0" text="nothing" />
-      <TextField layoutX="153.0" layoutY="276.0" />
+      <TextArea fx:id="plzwork" layoutY="506.0" prefHeight="213.0" prefWidth="1181.0" text="Tap on next to start the tutorial (:" />
     </children>
 </AnchorPane>

@@ -11,11 +11,11 @@ import javafx.stage.Stage;
 public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        String css = this.getClass().getResource("styleSheet.css").toExternalForm();
+        String css = this.getClass().getResource("/org/example/vncpit252/styleSheet.css").toExternalForm();
         try {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("home_page.fxml"));
             Parent root = loader.load();
-            Controller controller = loader.getController();
+        
             
             Scene scene = new Scene(root);
             scene.getStylesheets().add(css);

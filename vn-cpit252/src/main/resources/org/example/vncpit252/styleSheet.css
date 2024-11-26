@@ -10,3 +10,36 @@
 .label{
 
 }
+#lableID{
+    -fx-alignment: center; /* Center the text */
+    -fx-text-fill: #2c3e50; /* Dark text for good contrast */
+    -fx-font-size: 12px; /* Smaller font size */
+    -fx-font-weight: bold; /* Make the font bold */
+    -fx-font-family: "Arial", sans-serif; /* Clean font */
+    -fx-padding: 2; /* Reduced padding around the text */
+    -fx-background-color: #ecf0f1; /* Light background */
+    -fx-border-color: #6c3483; /* Purple/Blue-Black color for the border */
+    -fx-border-width: 1; /* Thin border */
+    -fx-border-radius: 3; /* Slightly rounded corners */
+    -fx-background-radius: 3; /* Match the background to border radius *//* Match the background to border radius */
+}
+
+/* Styling for the TextArea */
+#plzwork {
+    -fx-background-color: #f9f9f9; /* Soft light background color for the area */
+    -fx-border-color: #ccc; /* Light gray border for a clean look */
+    -fx-border-radius: 10px; /* Rounded corners for a soft appearance */
+    -fx-padding: 15px; /* Padding inside the TextArea for breathing space */
+    -fx-font-family: "Arial", "Helvetica", sans-serif; /* Clean, readable fonts */
+    -fx-font-size: 16px; /* Appropriate font size for easy reading */
+    -fx-text-fill: #333333; /* Dark text color for better contrast */
+    -fx-line-spacing: 5px; /* Extra line spacing for better readability */
+    -fx-wrap-text: true; /* Ensure text wraps within the area */
+    -fx-opacity: 1.0; /* Full opacity for visibility */
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.1), 5, 0.5, 0, 2); /* Light shadow for depth */
+}
+
+
+#plzwork .text {
+    -fx-fill: #aaa; /
+}

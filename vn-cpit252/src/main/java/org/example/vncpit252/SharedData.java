@@ -21,16 +21,16 @@ public class SharedData {
 
     //setters
     public static void setDialogStrings() throws IOException {
-        dialogStrings = getArrStrings("/org/example/vncpit252/dialog.txt");
+        dialogStrings = getArrStrings("/org/example/vncpit252/txt-fiels/dialog.txt");
     }
     public static void setQuestionStrings() throws IOException {
-        questionStrings = getArrStrings("/org/example/vncpit252/question.txt");
+        questionStrings = getArrStrings("/org/example/vncpit252/txt-fiels/question.txt");
     }
     public static void setAnswerStrings() throws IOException {
-        answerStrings = getArrStrings("/org/example/vncpit252/answer.txt");
+        answerStrings = getArrStrings("/org/example/vncpit252/txt-fiels/answer.txt");
     }
     public static void setVideoStrings() throws IOException {
-        videoStrings = getArrStrings("/org/example/vncpit252/video.txt");
+        videoStrings = getArrStrings("/org/example/vncpit252/txt-fiels/video.txt");
     }
     public static void setPointer(int pointer) {
         SharedData.pointer = pointer;
