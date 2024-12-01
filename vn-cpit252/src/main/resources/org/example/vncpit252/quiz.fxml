@@ -1,32 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import javafx.geometry.Insets?>
-<?import javafx.scene.control.*?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.QuizController"
-      spacing="20" alignment="CENTER" style="-fx-padding: 20; -fx-background-color: #f0f8ff; -fx-border-color: #4682b4; -fx-border-width: 2; -fx-border-radius: 10;">
+<VBox alignment="CENTER" prefHeight="493.0" prefWidth="618.0" spacing="20" style="-fx-padding: 20; -fx-background-color: #f0f8ff; -fx-border-color: #4682b4; -fx-border-width: 2; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.QuizController">
+
+    <!-- AnchorPane for Back button -->
+    <AnchorPane />
 
     <!-- Title -->
-    <Label text="Design Patterns Quiz" style="-fx-font-size: 24; -fx-text-fill: #4682b4; -fx-font-weight: bold;" />
+    <Label style="-fx-font-size: 24; -fx-text-fill: #4682b4; -fx-font-weight: bold;" text="Design Patterns Quiz" />
 
     <!-- Question Display -->
-    <Label fx:id="questionLabel" text="Question will appear here"
-           style="-fx-font-size: 18; -fx-text-fill: #333; -fx-background-color: #e6f7ff; -fx-padding: 10; -fx-border-radius: 5;" />
+    <Label fx:id="questionLabel" style="-fx-font-size: 18; -fx-text-fill: #333; -fx-background-color: #e6f7ff; -fx-padding: 10; -fx-border-radius: 5;" text="Question will appear here" />
 
     <!-- True/False Options -->
-    <VBox spacing="10" alignment="CENTER">
-        <RadioButton fx:id="trueOption" text="True" toggleGroup="$answerToggleGroup"
-                     style="-fx-font-size: 16; -fx-text-fill: #2e8b57;" />
-        <RadioButton fx:id="falseOption" text="False" toggleGroup="$answerToggleGroup"
-                     style="-fx-font-size: 16; -fx-text-fill: #8b0000;" />
+    <VBox alignment="CENTER" spacing="10">
+        <RadioButton fx:id="trueOption" style="-fx-font-size: 16; -fx-text-fill: #000000;" text="True">
+            <toggleGroup>
+                <ToggleGroup fx:id="answerToggleGroup" />
+            </toggleGroup>
+        </RadioButton>
+        <RadioButton fx:id="falseOption" style="-fx-font-size: 16; -fx-text-fill: #000000;" text="False" toggleGroup="$answerToggleGroup" />
     </VBox>
 
     <!-- Navigation Buttons -->
-    <Button fx:id="nextButton" text="Next" onAction="#onNextButtonClick"
-            style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" />
+    <Button fx:id="nextButton" onAction="#onNextButtonClick" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Next" />
+    <Button fx:id="backButton" onAction="#handleBackButton" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Back" />
+
 
     <!-- Feedback Section -->
-    <Label fx:id="feedbackLabel" text="" style="-fx-font-size: 16; -fx-text-fill: #555;" />
-
+    <Label fx:id="feedbackLabel" style="-fx-font-size: 16; -fx-text-fill: #555;" text="" />
 </VBox>
