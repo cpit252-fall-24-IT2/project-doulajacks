@@ -1,27 +1,22 @@
 package org.example.vncpit252;
 
-import javafx.beans.value.ChangeListener;
-import javafx.beans.value.ObservableValue;
-import javafx.concurrent.Worker;
-import javafx.concurrent.Worker.State;
-import javafx.event.EventHandler;
 import javafx.fxml.FXML;
-import javafx.geometry.Rectangle2D;
-import javafx.scene.Scene;
+import javafx.scene.control.Button;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.VBox;
-import javafx.scene.web.WebEngine;
-import javafx.scene.web.WebEvent;
 import javafx.scene.web.WebView;
+import javafx.scene.input.MouseEvent;
+import javafx.event.ActionEvent;
 import javafx.stage.Stage;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.util.Scanner;
+import java.io.IOException;
 
 public class ResourcesController {
+
+    @FXML
+    private AnchorPane paneID;
 
     @FXML
     private WebView webHolderID;
@@ -38,14 +33,21 @@ public class ResourcesController {
     @FXML
     private VBox codeVboxID;
 
+    @FXML
+    private VBox zoomVboxID;
+
+
     private static ResourcesHandler resources;
 
     public static void setResources(String id) {
-        resources = new ResourcesHandler();
+        int idnum = Character.getNumericValue(id.charAt(id.length()-1));
+        System.out.println(idnum);
+        resources = new ResourcesHandler(idnum);
     }
 
     @FXML
-    public void initialize() throws FileNotFoundException {
+    public void initialize() {
+        webHolderID.setContextMenuEnabled(true); // this line fixes a bug
 
         for (String link: resources.getReadings()) {
             Hyperlink hl = new Hyperlink(link);
@@ -62,8 +64,49 @@ public class ResourcesController {
             videosVboxID.getChildren().add(hl);
         }
 
-        webHolderID.getEngine().load("https://www.youtube.com/embed?v=DPvN6kizkVI"); // embed not working
-        webHolderID.setPrefSize(320, 195);
+        webHolderID.getEngine().load("https://www.youtube.com/embed/M88sDrY66r8");
+        webHolderID.setMaxSize(800, 480);
+        webHolderID.setMinSize(480, 320);
+
+        webHolderID.setPrefSize(480, 320);
+    }
+
+    @FXML
+    void zoomUp(MouseEvent event) {
+        double height = webHolderID.getHeight();
+        double width = webHolderID.getWidth();
+        double aspectRatio = width-height;
+        double currentLayoutX = webHolderID.getLayoutX();
+        webHolderID.setPrefSize(width+aspectRatio, height+aspectRatio);
+
+        if(webHolderID.getWidth() != 800) { // This magically works
+            webHolderID.setLayoutX(currentLayoutX - aspectRatio / 2);
+            zoomVboxID.setLayoutX(zoomVboxID.getLayoutX() + aspectRatio / 2);
+            videosVboxID.setLayoutX(videosVboxID.getLayoutX() - aspectRatio / 2);
+        }
+        System.out.println(webHolderID.getWidth());
+    }
+
+    @FXML
+    void zoomDown(MouseEvent event) {
+        double height = webHolderID.getHeight();
+        double width = webHolderID.getWidth();
+        double aspectRatio = width-height;
+        double currentLayoutX = webHolderID.getLayoutX();
+        webHolderID.setPrefSize(width-aspectRatio, height-aspectRatio);
+
+        if(webHolderID.getWidth() != 480) { // This magically works
+            webHolderID.setLayoutX(currentLayoutX + aspectRatio / 2);
+            zoomVboxID.setLayoutX(zoomVboxID.getLayoutX() - aspectRatio / 2);
+            videosVboxID.setLayoutX(videosVboxID.getLayoutX() + aspectRatio / 2);
+        }
+        System.out.println(webHolderID.getWidth());
+    }
+
+    @FXML
+    void returnBack(ActionEvent event) throws IOException {
+        Controller controller = new Controller();
+        controller.switchScene(event, "load_home_page.fxml");
     }
 
 }
