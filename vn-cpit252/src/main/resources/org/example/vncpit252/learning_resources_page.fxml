@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.web.WebView?>
 
-<AnchorPane fx:id="paneID" prefHeight="668.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.ResourcesController">
+<AnchorPane fx:id="paneID" prefHeight="668.0" prefWidth="1100.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" style="-fx-padding: 20; -fx-background-color: #f0f8ff; -fx-border-color: #4682b4; -fx-border-width: 2; -fx-border-radius: 10;" fx:controller="org.example.vncpit252.ResourcesController">
    <children>
       <Label fx:id="label1ID" layoutX="584.0" layoutY="590.0" text="Readings:">
          <font>
