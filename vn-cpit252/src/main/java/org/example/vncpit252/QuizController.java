@@ -52,7 +52,6 @@ public class QuizController {
 
 
     public void initialize() {
-        // Load the appropriate questions and answers for the quiz
         questions = SharedData.getSublist(SharedData.getQuestionStrings());
         answers = SharedData.getSublist(SharedData.getAnswerStrings());
 
@@ -73,32 +72,30 @@ public class QuizController {
             return;
         }
 
-        // Get the selected answer
         String selectedAnswer = ((RadioButton) answerToggleGroup.getSelectedToggle()).getText().trim();
 
-        // Check if the selected answer matches the correct answer (case-insensitive comparison)
+
         if (selectedAnswer.equalsIgnoreCase(answers[currentIndex].trim())) {
             feedbackLabel.setText("Correct!");
-            score++;  // Increment score if the answer is correct
+            score++;
         } else {
             feedbackLabel.setText("Incorrect! The correct answer is: " + answers[currentIndex].trim());
         }
 
         currentIndex++;
 
-        // Check if there are more questions
         if (currentIndex < questions.length) {
             showQuestion();
         } else {
-            // If it's the last question, display whether it was correct or incorrect
+
             if (selectedAnswer.equalsIgnoreCase(answers[currentIndex - 1].trim())) {
                 feedbackLabel.setText("Correct! Quiz Completed!");
             } else {
                 feedbackLabel.setText("Incorrect! The correct answer is: " + answers[currentIndex - 1].trim() + ". Quiz Completed!");
             }
 
-            nextButton.setDisable(true);  // Disable "Next" button after the last question
-            showScore();  // Show final score
+            nextButton.setDisable(true);
+            showScore();
         }
     }
 

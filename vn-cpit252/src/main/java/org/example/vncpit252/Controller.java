@@ -87,68 +87,68 @@ public class Controller {
     }
     @FXML
     public void singeltonQuiz(ActionEvent event) throws Exception {
-        SharedData.setPointer(0);  // Set the pointer for Singleton pattern's questions
+        SharedData.setPointer(0);
         SharedData.setIntalFlag(0);
-        SharedData.setLastFlag(5);  // Assuming 5 questions for Singleton
-        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+        SharedData.setLastFlag(5);
+        switchScene(event, "quiz.fxml");
     }
 
     @FXML
     public void prototypeQuiz(ActionEvent event) throws Exception {
-        SharedData.setPointer(5);  // Set the pointer for Prototype pattern's questions (next batch)
+        SharedData.setPointer(5);
         SharedData.setIntalFlag(5);
-        SharedData.setLastFlag(10);  // Assuming 5 questions for Prototype (questions 10-14)
-        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+        SharedData.setLastFlag(10);
+        switchScene(event, "quiz.fxml");
     }
 
     @FXML
     public void adapterQuiz(ActionEvent event) throws Exception {
-        SharedData.setPointer(10);  // Set the pointer for Adapter pattern's questions (next batch)
+        SharedData.setPointer(10);
         SharedData.setIntalFlag(10);
-        SharedData.setLastFlag(15);  // Assuming 5 questions for Adapter (questions 5-9)
-        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+        SharedData.setLastFlag(15);
+        switchScene(event, "quiz.fxml");
     }
 
 
 
     @FXML
     public void builderQuiz(ActionEvent event) throws Exception {
-        SharedData.setPointer(15);  // Set the pointer for Builder pattern's questions (next batch)
+        SharedData.setPointer(15);
         SharedData.setIntalFlag(15);
-        SharedData.setLastFlag(20);  // Assuming 5 questions for Builder (questions 15-19)
-        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+        SharedData.setLastFlag(20);
+        switchScene(event, "quiz.fxml");
     }
 
 
     @FXML
     public void proxyQuiz(ActionEvent event) throws Exception {
-        SharedData.setPointer(20);  // Set the pointer for Proxy pattern's questions (next batch)
+        SharedData.setPointer(20);
         SharedData.setIntalFlag(20);
-        SharedData.setLastFlag(25);  // Assuming 5 questions for Proxy (questions 25-29)
-        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+        SharedData.setLastFlag(25);
+        switchScene(event, "quiz.fxml");
     }
 
     @FXML
     public void flyweightQuiz(ActionEvent event) throws Exception {
-        SharedData.setPointer(25);  // Set the pointer for Flyweight pattern's questions (next batch)
+        SharedData.setPointer(25);
         SharedData.setIntalFlag(25);
-        SharedData.setLastFlag(30);  // Assuming 5 questions for Flyweight (questions 30-34)
-        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+        SharedData.setLastFlag(30);
+        switchScene(event, "quiz.fxml");
     }
     @FXML
     public void decoratorQuiz(ActionEvent event) throws Exception {
-        SharedData.setPointer(30);  // Set the pointer for Decorator pattern's questions (next batch)
+        SharedData.setPointer(30);
         SharedData.setIntalFlag(30);
-        SharedData.setLastFlag(35);  // Assuming 5 questions for Decorator (questions 20-24)
-        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+        SharedData.setLastFlag(35);
+        switchScene(event, "quiz.fxml");
     }
 
     @FXML
     public void observerQuiz (ActionEvent event) throws Exception {
-        SharedData.setPointer(35);  // Set the pointer for Observer pattern's questions (next batch)
+        SharedData.setPointer(35);
         SharedData.setIntalFlag(35);
-        SharedData.setLastFlag(40);  // Assuming 5 questions for Observer (questions 35-39)
-        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+        SharedData.setLastFlag(40);
+        switchScene(event, "quiz.fxml");
     }
 
     
