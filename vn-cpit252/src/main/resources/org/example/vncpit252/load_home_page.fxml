@@ -23,7 +23,7 @@
                </image>
             </ImageView>
             <Button fx:id="quiz" layoutX="210.0" layoutY="189.0" onAction="#switchToQuizPage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Quiz" />
-            <Button fx:id="backButton" layoutX="79.0" layoutY="189.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
+            <Button fx:id="resourcesButton1" layoutX="79.0" layoutY="189.0" onAction="#switchToLearningResources" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
             <Button fx:id="nextButton1" layoutX="7.0" layoutY="189.0" onAction="#singletinoScean" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Tutorial" />
          </children>
       </AnchorPane>
@@ -35,7 +35,7 @@
                </font>
             </Label>
             <Button fx:id="quiz" layoutX="208.0" layoutY="197.0" onAction="#switchToQuizPage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Quiz" />
-            <Button fx:id="backButton11" layoutX="77.0" layoutY="197.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
+            <Button fx:id="resourcesButton3" layoutX="77.0" layoutY="197.0" onAction="#switchToLearningResources" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
             <Button fx:id="nextButton111" layoutX="5.0" layoutY="196.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Tutorial" />
             <ImageView fitHeight="144.0" fitWidth="274.0" layoutX="5.0" layoutY="45.0">
                <image>
@@ -52,7 +52,7 @@
                </font>
             </Label>
             <Button fx:id="quiz" layoutX="208.0" layoutY="197.0" onAction="#switchToQuizPage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Quiz" />
-            <Button fx:id="backButton111" layoutX="77.0" layoutY="197.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
+            <Button fx:id="resourcesButton2" layoutX="77.0" layoutY="197.0" onAction="#switchToLearningResources" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
             <Button fx:id="nextButton1111" layoutX="5.0" layoutY="196.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Tutorial" />
             <ImageView fitHeight="144.0" fitWidth="274.0" layoutX="21.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                <cursor>
@@ -67,7 +67,7 @@
       <AnchorPane layoutX="875.0" layoutY="134.0" prefHeight="231.0" prefWidth="281.0">
          <children>
             <Button fx:id="quiz" layoutX="221.0" layoutY="197.0" onAction="#switchToQuizPage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Quiz" />
-            <Button fx:id="backButton112" layoutX="86.0" layoutY="197.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
+            <Button fx:id="resourcesButton4" layoutX="86.0" layoutY="197.0" onAction="#switchToLearningResources" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
             <Button fx:id="nextButton1112" layoutX="7.0" layoutY="196.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Tutorial" />
             <Label fx:id="lableID" alignment="CENTER" layoutX="16.0" layoutY="9.0" prefHeight="17.0" prefWidth="244.0" text="The Builder Design Pattern">
                <font>
@@ -89,7 +89,7 @@
                </font>
             </Label>
             <Button fx:id="quiz" layoutX="208.0" layoutY="197.0" onAction="#switchToQuizPage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Quiz" />
-            <Button fx:id="backButton1111" layoutX="77.0" layoutY="197.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
+            <Button fx:id="resourcesButton5" layoutX="77.0" layoutY="197.0" onAction="#switchToLearningResources" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
             <Button fx:id="nextButton11111" layoutX="5.0" layoutY="196.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Tutorial" />
             <ImageView fitHeight="144.0" fitWidth="274.0" layoutX="2.0" layoutY="45.0">
                <image>
@@ -106,7 +106,7 @@
                </font>
             </Label>
             <Button fx:id="quiz" layoutX="208.0" layoutY="197.0" onAction="#switchToQuizPage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Quiz" />
-            <Button fx:id="backButton11111" layoutX="77.0" layoutY="197.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
+            <Button fx:id="resourcesButton6" layoutX="77.0" layoutY="197.0" onAction="#switchToLearningResources" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
             <Button fx:id="nextButton111111" layoutX="5.0" layoutY="196.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Tutorial" />
             <ImageView fitHeight="144.0" fitWidth="274.0" layoutX="23.0" layoutY="45.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -123,7 +123,7 @@
                </font>
             </Label>
             <Button fx:id="quiz" layoutX="208.0" layoutY="197.0" onAction="#switchToQuizPage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Quiz" />
-            <Button fx:id="backButton111111" layoutX="77.0" layoutY="197.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
+            <Button fx:id="resourcesButton7" layoutX="77.0" layoutY="197.0" onAction="#switchToLearningResources" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
             <Button fx:id="nextButton1111111" layoutX="5.0" layoutY="196.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Tutorial" />
             <ImageView fitHeight="144.0" fitWidth="274.0" layoutX="3.0" layoutY="45.0">
                <image>
@@ -140,7 +140,7 @@
                </font>
             </Label>
             <Button fx:id="quiz" layoutX="208.0" layoutY="197.0" onAction="#switchToQuizPage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Quiz" />
-            <Button fx:id="backButton1111111" layoutX="77.0" layoutY="197.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
+            <Button fx:id="resourcesButton8" layoutX="77.0" layoutY="197.0" onAction="#switchToLearningResources" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="learning resources" />
             <Button fx:id="nextButton11111111" layoutX="5.0" layoutY="196.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 12; -fx-font-weight: bold; -fx-padding: 10 10;" text="Tutorial" />
             <ImageView fitHeight="144.0" fitWidth="274.0" layoutX="5.0" layoutY="45.0">
                <image>

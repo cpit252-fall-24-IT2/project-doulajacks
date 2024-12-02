@@ -38,21 +38,28 @@ public class ResourcesController {
     @FXML
     private VBox codeVboxID;
 
+    private static ResourcesHandler resources;
+
+    public static void setResources(String id) {
+        resources = new ResourcesHandler();
+    }
+
     @FXML
     public void initialize() throws FileNotFoundException {
 
-        Scanner sc = new Scanner(new File("src/main/resources/org/example/vncpit252/learning_resources.txt"));
-        for(int i = 1; i <= 3; i++) {
-            String[] str = sc.nextLine().split(" ");
-            for(String s: str) {
-                Hyperlink hl = new Hyperlink(s);
-                switch(i) {
-                    case 1:  videosVboxID.getChildren().add(hl); break;
-                    case 2:  readingsVboxID.getChildren().add(hl); break;
-                    case 3:  codeVboxID.getChildren().add(hl); break;
-                }
+        for (String link: resources.getReadings()) {
+            Hyperlink hl = new Hyperlink(link);
+            readingsVboxID.getChildren().add(hl);
+        }
 
-            }
+        for (String link: resources.getCodes()) {
+            Hyperlink hl = new Hyperlink(link);
+            codeVboxID.getChildren().add(hl);
+        }
+
+        for (String link: resources.getVideoUrls()) {
+            Hyperlink hl = new Hyperlink(link);
+            videosVboxID.getChildren().add(hl);
         }
 
         webHolderID.getEngine().load("https://www.youtube.com/embed?v=DPvN6kizkVI"); // embed not working

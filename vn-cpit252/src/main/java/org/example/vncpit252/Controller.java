@@ -65,6 +65,14 @@ public class Controller {
     }
 
     public void switchToLearningResources(ActionEvent event) throws IOException {
+        // Get button id from event toString
+        String buttonString = event.toString();
+        String idName = "resourcesButton"; // all ids start with this string
+        int startIndex = buttonString.indexOf(idName);
+        int endIndex = startIndex + (idName.length()+1);
+        String buttonID = buttonString.substring(startIndex, endIndex);
+        ResourcesController.setResources(buttonID);
+
         switchScene(event, "learning_resources_page.fxml");
     }
 
