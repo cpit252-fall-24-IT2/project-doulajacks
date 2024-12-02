@@ -1,31 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<!--<?import com.gluonhq.charm.glisten.control.TextField?>-->
-
 <?import javafx.scene.control.Button?>
-<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1181.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.Controller">
-    <children>
-        <ImageView fitHeight="454.0" fitWidth="1181.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
-        <TextArea fx:id="dialog" layoutY="506.0" prefHeight="213.0" prefWidth="1181.0"  />
-        <Button fx:id="nextDButtpn" layoutX="1128.0" layoutY="719.0" mnemonicParsing="false" text="next" />
-      <Button layoutX="14.0" layoutY="719.0" mnemonicParsing="false" text="back" />
-      <Button fx:id="exitID" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" stylesheets="@styleSheet.css" text="exit" />
-      <Button layoutX="55.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomePage" text="home" />
-      <Label layoutX="608.0" layoutY="158.0" prefHeight="25.0" prefWidth="41.0" text="name" />
-      <Label layoutX="608.0" layoutY="192.0" prefHeight="17.0" prefWidth="35.0" text="email" />
-      <Label layoutX="602.0" layoutY="221.0" prefHeight="17.0" prefWidth="47.0" text="gender" />
-      <ChoiceBox fx:id="genderChoiceID" layoutX="664.0" layoutY="218.0" prefWidth="150.0" />
-      <TextField fx:id="nameEntryID" layoutX="664.0" layoutY="158.0" />
-      <TextField fx:id="emailEntryID" layoutX="664.0" layoutY="188.0" />
-      <Button fx:id="startButtonID" layoutX="718.0" layoutY="276.0" mnemonicParsing="false" onAction="#saveInfo" text="Start" />
-<!--      <TextField layoutX="663.0" layoutY="158.0" />-->
-<!--      <TextField layoutX="663.0" layoutY="188.0" />-->
-    </children>
+<AnchorPane prefHeight="800" prefWidth="1200" style="-fx-padding: 20; -fx-background-color: #f0f8ff; -fx-border-color: #4682b4; -fx-border-width: 2; -fx-border-radius: 10; " xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.Controller">
+    <!-- Labels and TextFields -->
+    <Label layoutX="26.0" layoutY="159.0" text="Name:">
+      <font>
+         <Font name="Calibri Bold" size="16.0" />
+      </font></Label>
+    <TextField fx:id="nameField" layoutX="83.0" layoutY="155.0" prefHeight="25.0" prefWidth="589.0" promptText="please give us your name" />
+
+    <Label layoutX="19.0" layoutY="278.0" text="Country:">
+      <font>
+         <Font name="Calibri Bold" size="16.0" />
+      </font></Label>
+    <TextField fx:id="countryField" layoutX="83.0" layoutY="274.0" prefHeight="25.0" prefWidth="589.0" promptText="optional" />
+
+    <Label layoutX="31.0" layoutY="227.0" text="Age:">
+      <font>
+         <Font name="System Bold" size="16.0" />
+      </font></Label>
+    <TextField fx:id="ageField" layoutX="83.0" layoutY="227.0" prefHeight="25.0" prefWidth="589.0" promptText="optional" />
+
+    <Label layoutX="20.0" layoutY="316.0" text="Interest:">
+      <font>
+         <Font name="Calibri Bold" size="16.0" />
+      </font></Label>
+    <TextField fx:id="interestField" layoutX="83.0" layoutY="312.0" prefHeight="25.0" prefWidth="589.0" promptText="optional" />
+
+    <!-- Gender Section -->
+    <Label layoutX="21.0" layoutY="195.0" text="Gender:">
+      <font>
+         <Font name="Calibri Bold" size="16.0" />
+      </font></Label>
+    <HBox layoutX="542.0" layoutY="204.0" spacing="10" />
+
+    <!-- Result Label -->
+    <Label fx:id="resultLabel" layoutX="480.0" layoutY="400.0" prefHeight="58.0" prefWidth="274.0" />
+   <Button fx:id="exit" layoutX="14.0" layoutY="14.0" onAction="#exit" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Exit" />
+     <CheckBox fx:id="maleCheckBox" layoutX="114.0" layoutY="196.0" text="Male" />
+     <CheckBox fx:id="femaleCheckBox" layoutX="179.0" layoutY="196.0" text="Female" />
+   <Button fx:id="submit" layoutX="367.0" layoutY="406.0" onAction="#switchToLoeadHomePage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Submit" />
 </AnchorPane>

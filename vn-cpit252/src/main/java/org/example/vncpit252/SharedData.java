@@ -8,6 +8,7 @@ import java.io.InputStreamReader;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.nio.charset.StandardCharsets;
+import java.util.Arrays;
 
 public class SharedData {
     private static String[] dialogStrings = null;
@@ -23,51 +24,67 @@ public class SharedData {
     public static void setDialogStrings() throws IOException {
         dialogStrings = getArrStrings("/org/example/vncpit252/txt-fiels/dialog.txt");
     }
+
     public static void setQuestionStrings() throws IOException {
         questionStrings = getArrStrings("/org/example/vncpit252/txt-fiels/question.txt");
     }
+
     public static void setAnswerStrings() throws IOException {
         answerStrings = getArrStrings("/org/example/vncpit252/txt-fiels/answer.txt");
     }
+
     public static void setVideoStrings() throws IOException {
         videoStrings = getArrStrings("/org/example/vncpit252/txt-fiels/video.txt");
     }
+
     public static void setPointer(int pointer) {
         SharedData.pointer = pointer;
     }
+
     public static void setIntalFlag(int intalFlag) {
         SharedData.intalFlag = intalFlag;
     }
+
     public static void setLastFlag(int lastFlag) {
         SharedData.lastFlag = lastFlag;
     }
-
 
 
     // Getters 
     public static String[] getDialogStrings() {
         return dialogStrings;
     }
+
     public static String[] getQuestionStrings() {
         return questionStrings;
     }
+
     public static String[] getAnswerStrings() {
         return answerStrings;
     }
+
     public static String[] getVideoStrings() {
         return videoStrings;
     }
+
     public static int getPointer() {
         return pointer;
     }
+
     public static int getIntalFlag() {
         return intalFlag;
     }
+
     public static int getLastFlag() {
         
         return lastFlag;
     }
-   
+
+    // Method to get a sublist of questions and answers based on the current pointer and lastFlag
+    public static String[] getSublist(String[] array) {
+        return Arrays.copyOfRange(array, pointer, lastFlag);
+    }
+
 
     // fetch data from txt methoud
     private static String[] getArrStrings(String pathh) throws IOException {
@@ -79,9 +96,6 @@ public class SharedData {
 
         try (InputStreamReader fr = new InputStreamReader(
                 SharedData.class.getResourceAsStream(pathh), StandardCharsets.UTF_8)) {
-
-           
-
             BufferedReader reader = new BufferedReader(fr);
             StringBuilder content = new StringBuilder();
             String line;

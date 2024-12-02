@@ -6,17 +6,23 @@
 <?import javafx.scene.control.ToggleGroup?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
 
-<VBox alignment="CENTER" prefHeight="493.0" prefWidth="618.0" spacing="20" style="-fx-padding: 20; -fx-background-color: #f0f8ff; -fx-border-color: #4682b4; -fx-border-width: 2; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.QuizController">
+<VBox alignment="CENTER" prefHeight="758.0" prefWidth="1181.0" spacing="20" style="-fx-padding: 20; -fx-background-color: #f0f8ff; -fx-border-color: #4682b4; -fx-border-width: 2; -fx-border-radius: 10;" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.QuizController">
+    <Label fx:id="quizTitleLabel" layoutX="50.0" layoutY="50.0" style="-fx-font-size: 20px; -fx-font-weight: bold;" text="Design Pattern Quiz ">
+
+      <font>
+         <Font name="Cambria Bold" size="24.0" />
+      </font>
+   </Label>
 
     <!-- AnchorPane for Back button -->
     <AnchorPane />
-
-    <!-- Title -->
-    <Label style="-fx-font-size: 24; -fx-text-fill: #4682b4; -fx-font-weight: bold;" text="Design Patterns Quiz" />
-
-    <!-- Question Display -->
-    <Label fx:id="questionLabel" style="-fx-font-size: 18; -fx-text-fill: #333; -fx-background-color: #e6f7ff; -fx-padding: 10; -fx-border-radius: 5;" text="Question will appear here" />
+   <Label fx:id="questionLabel" alignment="CENTER" prefHeight="45.0" prefWidth="1051.0" text="Question will appear here">
+      <font>
+         <Font name="Cambria Bold" size="18.0" />
+      </font>
+   </Label>
 
     <!-- True/False Options -->
     <VBox alignment="CENTER" spacing="10">
@@ -35,4 +41,10 @@
 
     <!-- Feedback Section -->
     <Label fx:id="feedbackLabel" style="-fx-font-size: 16; -fx-text-fill: #555;" text="" />
+    <Label fx:id="scoreLabel" layoutX="50.0" layoutY="400.0" text="Your score: 0">
+
+    <font>
+         <Font name="Calibri Bold" size="16.0" />
+      </font></Label>
+
 </VBox>

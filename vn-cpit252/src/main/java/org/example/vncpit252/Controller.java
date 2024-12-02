@@ -60,6 +60,8 @@ public class Controller {
         switchScene(event, "quiz.fxml");
     }
 
+
+
     public void switchToDialog(ActionEvent event) throws Exception {
         switchScene(event, "dialog_Show.fxml");
     }
@@ -83,6 +85,71 @@ public class Controller {
         SharedData.setLastFlag(9);
         switchScene(event, "dialog_Show.fxml");
     }
+    @FXML
+    public void singeltonQuiz(ActionEvent event) throws Exception {
+        SharedData.setPointer(0);  // Set the pointer for Singleton pattern's questions
+        SharedData.setIntalFlag(0);
+        SharedData.setLastFlag(5);  // Assuming 5 questions for Singleton
+        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+    }
+
+    @FXML
+    public void prototypeQuiz(ActionEvent event) throws Exception {
+        SharedData.setPointer(5);  // Set the pointer for Prototype pattern's questions (next batch)
+        SharedData.setIntalFlag(5);
+        SharedData.setLastFlag(10);  // Assuming 5 questions for Prototype (questions 10-14)
+        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+    }
+
+    @FXML
+    public void adapterQuiz(ActionEvent event) throws Exception {
+        SharedData.setPointer(10);  // Set the pointer for Adapter pattern's questions (next batch)
+        SharedData.setIntalFlag(10);
+        SharedData.setLastFlag(15);  // Assuming 5 questions for Adapter (questions 5-9)
+        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+    }
+
+
+
+    @FXML
+    public void builderQuiz(ActionEvent event) throws Exception {
+        SharedData.setPointer(15);  // Set the pointer for Builder pattern's questions (next batch)
+        SharedData.setIntalFlag(15);
+        SharedData.setLastFlag(20);  // Assuming 5 questions for Builder (questions 15-19)
+        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+    }
+
+
+    @FXML
+    public void proxyQuiz(ActionEvent event) throws Exception {
+        SharedData.setPointer(20);  // Set the pointer for Proxy pattern's questions (next batch)
+        SharedData.setIntalFlag(20);
+        SharedData.setLastFlag(25);  // Assuming 5 questions for Proxy (questions 25-29)
+        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+    }
+
+    @FXML
+    public void flyweightQuiz(ActionEvent event) throws Exception {
+        SharedData.setPointer(25);  // Set the pointer for Flyweight pattern's questions (next batch)
+        SharedData.setIntalFlag(25);
+        SharedData.setLastFlag(30);  // Assuming 5 questions for Flyweight (questions 30-34)
+        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+    }
+    @FXML
+    public void decoratorQuiz(ActionEvent event) throws Exception {
+        SharedData.setPointer(30);  // Set the pointer for Decorator pattern's questions (next batch)
+        SharedData.setIntalFlag(30);
+        SharedData.setLastFlag(35);  // Assuming 5 questions for Decorator (questions 20-24)
+        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+    }
+
+    @FXML
+    public void observerQuiz (ActionEvent event) throws Exception {
+        SharedData.setPointer(35);  // Set the pointer for Observer pattern's questions (next batch)
+        SharedData.setIntalFlag(35);
+        SharedData.setLastFlag(40);  // Assuming 5 questions for Observer (questions 35-39)
+        switchScene(event, "quiz.fxml");  // Switch to the quiz scene
+    }
 
     
         @FXML
@@ -94,15 +161,10 @@ public class Controller {
     }
 
     public void switchScene(ActionEvent event, String fxmlname) throws IOException {
-        try {
-            root = FXMLLoader.load(getClass().getResource(fxmlname));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            stage.setScene(scene);
-            stage.show();
-        } catch (IOException e) {
-            e.printStackTrace();  // Add this line for debugging
-        }
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Scene scene = new Scene(FXMLLoader.load(getClass().getResource(fxmlname)));
+        stage.setScene(scene);
+        stage.show();
     }
 
     public void exit() {

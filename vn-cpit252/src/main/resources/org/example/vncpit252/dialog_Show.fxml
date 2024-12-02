@@ -6,14 +6,14 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1181.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="758.0" prefWidth="1181.0" style="-fx-padding: 20; -fx-background-color: #f0f8ff; -fx-border-color: #4682b4; -fx-border-width: 2; -fx-border-radius: 10; " xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="org.example.vncpit252.Controller">
     <children>
       <ImageView fitHeight="454.0" fitWidth="1181.0" layoutY="49.0" pickOnBounds="true" preserveRatio="true" />
-      <Button fx:id="nextDButtpn" layoutX="1128.0" layoutY="719.0" mnemonicParsing="false" onAction="#UpdateText" text="next" />
-      <Button layoutX="14.0" layoutY="719.0" mnemonicParsing="false" onAction="#goBackText" text="back" />
-      <Button fx:id="exitID" layoutX="14.0" layoutY="14.0" mnemonicParsing="false" onAction="#exit" stylesheets="@../../../../../../../../project-doulajacks/vn-cpit252/src/main/resources/org/example/vncpit252/styleSheet.css" text="exit" />
-      <Button fx:id="gotohome" layoutX="55.0" layoutY="14.0" mnemonicParsing="false" onAction="#switchToHomePage" text="home" />
       <Label fx:id="titlest" layoutY="81.0" prefHeight="17.0" prefWidth="1181.0" text="lvl 1 95" />
-      <TextArea fx:id="plzwork" layoutY="506.0" prefHeight="213.0" prefWidth="1181.0" text="Tap on next to start the tutorial (:" />
+      <TextArea fx:id="plzwork" layoutY="477.0" prefHeight="213.0" prefWidth="1181.0" text="Tap on next to start the tutorial (:" />
+      <Button fx:id="Exit" layoutX="21.0" layoutY="14.0" onAction="#exit" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Exit" />
+      <Button fx:id="home" layoutX="100.0" layoutY="14.0" onAction="#switchToHomePage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Home" />
+      <Button fx:id="back" layoutX="14.0" layoutY="696.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Back" />
+      <Button fx:id="Next" layoutX="1091.0" layoutY="696.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Next" />
     </children>
 </AnchorPane>
