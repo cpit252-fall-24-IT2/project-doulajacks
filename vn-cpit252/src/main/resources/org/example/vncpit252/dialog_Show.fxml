@@ -13,7 +13,7 @@
       <TextArea fx:id="plzwork" layoutY="477.0" prefHeight="213.0" prefWidth="1181.0" text="Tap on next to start the tutorial (:" />
       <Button fx:id="Exit" layoutX="21.0" layoutY="14.0" onAction="#exit" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Exit" />
       <Button fx:id="home" layoutX="100.0" layoutY="14.0" onAction="#switchToHomePage" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Home" />
-      <Button fx:id="back" layoutX="14.0" layoutY="696.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Back" />
-      <Button fx:id="Next" layoutX="1091.0" layoutY="696.0" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Next" />
+      <Button fx:id="back" layoutX="14.0" layoutY="696.0" onAction="#goBackText" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Back" />
+      <Button fx:id="Next" layoutX="1091.0" layoutY="696.0" onAction="#UpdateText" style="-fx-background-color: #4682b4; -fx-text-fill: white; -fx-font-size: 16; -fx-font-weight: bold; -fx-padding: 10 20;" text="Next" />
     </children>
 </AnchorPane>
