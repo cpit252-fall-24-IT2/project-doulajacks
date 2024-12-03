@@ -1,32 +1,32 @@
 Singleton
 https://refactoring.guru/design-patterns/singleton https://www.patterns.dev/vanilla/singleton-pattern/ https://www.geeksforgeeks.org/singleton-design-pattern/
 https://gitlab.com/cpit252/design-patterns/-/tree/main/01-singleton https://cpit252.gitlab.io/labs/lab-2/
-https://youtu.be/M88sDrY66r8 https://www.youtube.com/watch?v=sJ-c3BA-Ypo
+https://www.youtube.com/embed/M88sDrY66r8 https://www.youtube.com/embed/tSZn4wkBIu8?si=CPuAVi8YYQXTRDVu
 Prototype
 https://refactoring.guru/design-patterns/prototype https://www.geeksforgeeks.org/prototype-design-pattern/
 https://cpit252.gitlab.io/labs/lab-3/ https://gitlab.com/cpit252/design-patterns/-/tree/main/02-prototype
-https://youtu.be/NLliWr_caB0 https://www.youtube.com/embed/tqYQqSLLmEo?si=gjAyvlDggbYf7N_Q
+https://www.youtube.com/embed/NLliWr_caB0 https://www.youtube.com/embed/DcFhITC9v0E?si=t55_dtTXKz6EyFdu
 Adapter
 https://refactoring.guru/design-patterns/adapter https://www.geeksforgeeks.org/adapter-pattern/
 https://cpit252.gitlab.io/labs/lab-5/ https://gitlab.com/cpit252/design-patterns/-/tree/main/06-adapter
-https://youtu.be/mqhjgvsbi-M https://www.youtube.com/embed/wA3keqCeKtM?si=yQL7CM0Rrl3zBekB
+https://www.youtube.com/embed/mqhjgvsbi-M https://www.youtube.com/embed/wA3keqCeKtM?si=5bILZsrb0oxL-s-0
 Builder
 https://refactoring.guru/design-patterns/builder https://www.geeksforgeeks.org/builder-design-pattern/
 https://cpit252.gitlab.io/labs/lab-4/ https://gitlab.com/cpit252/design-patterns/-/tree/main/03-builder-icecream
-https://youtu.be/2y1TikdWaUs https://www.youtube.com/embed/MaY_MDdWkQw?si=6VXWVYDsZh_rvzhJ
+https://www.youtube.com/embed/2y1TikdWaUs https://www.youtube.com/embed/MaY_MDdWkQw?si=6VXWVYDsZh_rvzhJ
 Proxy
 https://refactoring.guru/design-patterns/proxy https://www.geeksforgeeks.org/proxy-design-pattern/
 https://cpit252.gitlab.io/labs/lab-8/ https://gitlab.com/cpit252/design-patterns/-/tree/main/12-proxy-weather-service
-https://youtu.be/g_5q-5bHx-o https://www.youtube.com/embed/TS5i-uPXLs8?si=ctZf2xAS_c569pya
+https://www.youtube.com/embed/g_5q-5bHx-o https://www.youtube.com/embed/TS5i-uPXLs8?si=ctZf2xAS_c569pya
 Flyweight
 https://refactoring.guru/design-patterns/flyweight https://www.geeksforgeeks.org/flyweight-design-pattern/
 https://cpit252.gitlab.io/labs/lab-7/ https://gitlab.com/cpit252/design-patterns/-/tree/main/11-flyweight
-https://youtu.be/nUfCFtaCj-U https://www.youtube.com/embed/qscOsQV-K14?si=8Y12rFC27rsB9g-0
+https://www.youtube.com/embed/nUfCFtaCj-U https://www.youtube.com/embed/qscOsQV-K14?si=8Y12rFC27rsB9g-0
 Decorator
 https://refactoring.guru/design-patterns/decorator https://www.geeksforgeeks.org/decorator-pattern/
 https://cpit252.gitlab.io/labs/lab-6/ https://gitlab.com/cpit252/design-patterns/-/tree/main/09-decorator
-https://youtu.be/UMw_U6kUvRE https://www.youtube.com/embed/v6tpISNjHf8?si=e_lFzHHbL3rcifJE
+https://www.youtube.com/embed/UMw_U6kUvRE https://www.youtube.com/embed/v6tpISNjHf8?si=e_lFzHHbL3rcifJE
 Observer
 https://refactoring.guru/design-patterns/observer https://www.geeksforgeeks.org/observer-pattern-set-1-introduction/
 https://cpit252.gitlab.io/labs/lab-9/ https://gitlab.com/cpit252/design-patterns/-/tree/main/18-observer
-https://youtu.be/Kcc5_5HfpoA https://www.youtube.com/embed/-oLDJ2dbadA?si=2N5yRXBylS01cXwU
+https://www.youtube.com/embed/Kcc5_5HfpoA https://www.youtube.com/embed/-oLDJ2dbadA?si=2N5yRXBylS01cXwU
