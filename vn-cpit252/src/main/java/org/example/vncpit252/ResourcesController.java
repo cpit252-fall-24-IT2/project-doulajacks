@@ -44,54 +44,25 @@ public class ResourcesController {
         webHolderID.setContextMenuEnabled(true); // this line fixes a bug
 
         for (String link: resources.getReadings()) {
-            Hyperlink hl = new Hyperlink(link);
-            // open link in default browser
-            hl.setOnAction(mouseEvent -> {
-                if (Desktop.isDesktopSupported()) {
-                    try {
-                        Desktop.getDesktop().browse(new URI(hl.getText()));
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    } catch (URISyntaxException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            });
-            hl.setFont(Font.font("System", 15));
+            Hyperlink hl = createHyperLink(link);
+            setOnActionToOpenBrowser(hl);
             readingsVboxID.getChildren().add(hl);
         }
 
         for (String link: resources.getCodes()) {
-            Hyperlink hl = new Hyperlink(link);
-            // open link in default browser
-            hl.setOnAction(mouseEvent -> {
-                if (Desktop.isDesktopSupported()) {
-                    try {
-                        Desktop.getDesktop().browse(new URI(hl.getText()));
-                    } catch (IOException e) {
-                        throw new RuntimeException(e);
-                    } catch (URISyntaxException e) {
-                        throw new RuntimeException(e);
-                    }
-                }
-            });
-            hl.setFont(Font.font("System", 15));
+            Hyperlink hl = createHyperLink(link);
+            setOnActionToOpenBrowser(hl);
             codeVboxID.getChildren().add(hl);
         }
 
         for (String link: resources.getVideoUrls()) {
-            Hyperlink hl = new Hyperlink(link);
-            // switching videos functionality
-            hl.setOnAction(mouseEvent -> {switchVideo(hl);});
-            hl.setFont(Font.font("System", 15));
+            Hyperlink hl = createHyperLink(link);
+            setOnActionToSwitchingVideo(hl);
             videosVboxID.getChildren().add(hl);
         }
 
-        webHolderID.getEngine().load(resources.getVideoUrls().getFirst());
-        webHolderID.setMaxSize(800, 480);
-        webHolderID.setMinSize(480, 320);
-
-        webHolderID.setPrefSize(480, 320);
+        String defaultVideo = resources.getVideoUrls().getFirst();
+        defaultWebview(defaultVideo);
 
     }
 
@@ -132,9 +103,40 @@ public class ResourcesController {
         controller.switchScene(event, "load_home_page.fxml");
     }
 
-    @FXML
-    void switchVideo(Hyperlink hl) {
-        webHolderID.getEngine().load(hl.getText());
+    private Hyperlink createHyperLink(String link) {
+        Hyperlink hl = new Hyperlink(link);
+
+        hl.setFont(Font.font("System", 15));
+        return hl;
+    }
+
+    private void setOnActionToOpenBrowser(Hyperlink hl) {
+        // open link in default browser
+        hl.setOnAction(mouseEvent -> {
+            if (Desktop.isDesktopSupported()) {
+                try {
+                    Desktop.getDesktop().browse(new URI(hl.getText()));
+                } catch (IOException e) {
+                    throw new RuntimeException(e);
+                } catch (URISyntaxException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        });
+    }
+
+    private void setOnActionToSwitchingVideo(Hyperlink hl) {
+        // switching videos functionality
+        hl.setOnAction(mouseEvent -> {
+            webHolderID.getEngine().load(hl.getText());
+        });
+    }
+
+    private void defaultWebview(String defaultVideo) {
+        webHolderID.getEngine().load(defaultVideo);
+        webHolderID.setMaxSize(800, 480);
+        webHolderID.setMinSize(480, 320);
+        webHolderID.setPrefSize(480, 320);
     }
 
 }
