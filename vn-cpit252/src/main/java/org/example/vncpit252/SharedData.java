@@ -47,8 +47,12 @@ public class SharedData {
 
     public static void setLastFlag(int lastFlag) {
         SharedData.lastFlag = lastFlag;
-    }
+    } 
 
+
+    public static void setSaveInfo(SaveInfo saveInfo) {
+        SharedData.saveInfo = saveInfo;
+    }
 
     // Getters 
     public static String[] getDialogStrings() {
@@ -114,19 +118,24 @@ public class SharedData {
     
 
     //read and write objec to presarve save
-    public static void readOBJ() throws Exception{
-        try(var out = new ObjectOutputStream(new FileOutputStream("Save.dat")) ){
+    public static void writedOBJ() throws Exception{
+        try(var out = new ObjectOutputStream(new FileOutputStream("src/main/resources/org/example/vncpit252/Save.dat")) ){
             out.writeObject(saveInfo);
         }
 
     }
-    public static void writedOBJ(){
-        try (var in = new ObjectInputStream( new FileInputStream("Save.dat"))) {
-           saveInfo = (SaveInfo) in.readObject();
+    public static void readOBJ() {
+        try (var in = new ObjectInputStream(new FileInputStream("src/main/resources/org/example/vncpit252/Save.dat"))) {
+            saveInfo = (SaveInfo) in.readObject();
+            System.out.println("we have read the obj and the values are "+ saveInfo.toString());
         } catch (Exception e) {
-            // TODO: handle exception
+            // Handle exception, like file not found or class not found
         }
 
+    }
+
+    public static SaveInfo getSaveInfo() {
+        return saveInfo;
     }
 
 

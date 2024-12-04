@@ -15,13 +15,16 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
+
 public class Controller {
     // Arrays of text and important paths
     String[] dialogStrings = SharedData.getDialogStrings();
+    SaveInfo save ;
 
 
  // Variables for switching scenes
@@ -46,9 +49,10 @@ public class Controller {
      ChoiceBox<?> genderChoiceID;
      //time line so we can resit it
      Timeline tl;
+     @FXML
+     private Label savename;
     
 
-   
 
 
 
@@ -56,8 +60,9 @@ public class Controller {
 
 
 
+     
 
-
+ 
 
 
 
@@ -70,25 +75,26 @@ public class Controller {
 
 
  //switchin scean related methouds
-    public void switchScene(ActionEvent event, String fxmlname) throws IOException {
-        try {
-            String css = this.getClass().getResource("/org/example/vncpit252/styleSheet.css").toExternalForm();
-            root = FXMLLoader.load(getClass().getResource(fxmlname));
-            stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-            scene = new Scene(root);
-            scene.getStylesheets().add(css);
-            stage.setScene(scene);
-            stage.show();
-            
-        } catch (IOException e) {
-            e.printStackTrace();  // Add this line for debugging
-        }
+ public void switchScene(ActionEvent event, String fxmlname) throws IOException {
+    try {
+        String css = this.getClass().getResource("/org/example/vncpit252/styleSheet.css").toExternalForm();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource(fxmlname));  // Create a new loader instance
+        root = loader.load();  // Load the new scene
+        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        scene = new Scene(root);
+        scene.getStylesheets().add(css);
+        stage.setScene(scene);
+        stage.show();
+    } catch (IOException e) {
+        e.printStackTrace();  // Add this line for debugging
     }
-    public void switchToScene(Scene newScene) {
-        Stage stage = (Stage) scene.getWindow();
-     }
+}
+    // public void switchToScene(Scene newScene) {
+    //     Stage stage = (Stage) scene.getWindow();
+    //  }
+
     public void switchToHomePage(ActionEvent event) throws IOException {
-        SharedData.writedOBJ();
+        
         switchScene(event, "home_page.fxml");
         
     }
@@ -101,25 +107,60 @@ public class Controller {
     public void switchToDialog(ActionEvent event) throws Exception {
         switchScene(event, "dialog_Show.fxml");
     }
-    public void switchToLoeadHomePage(ActionEvent event) throws IOException {
-        switchScene(event, "load_home_page.fxml");
+    public void switchToLoeadHomePage(ActionEvent event) throws IOException, Exception {
+        
+        switchToLoadHomePageWithoutEvent();
     }
-    public void switchToLoadHomePageWithoutEvent() {
+
+    public void switchWithNoEvent(String xml) {
         try {
-            // Load the FXML file for "load home page"
-            Parent root = FXMLLoader.load(getClass().getResource("load_home_page.fxml"));
-
-            // Retrieve the current stage
-            Stage stage = (Stage) plzwork.getScene().getWindow(); // Replace 'plzwork' with any valid node in your scene
-
-            // Set the new scene
+            // Load the FXML file for the new scene
+            FXMLLoader loader = new FXMLLoader(getClass().getResource(xml));
+    
+            // Ensure the controller is set properly only if needed
+            // loader.setController(this); // This line can be removed if you have the controller set in the FXML already
+    
+            // Load the root node from FXML
+            Parent root = loader.load();
+    
+            // Retrieve the current stage from any node (not necessarily 'exitID')
+            Stage stage = (Stage) ((Node) exitID).getScene().getWindow(); // You can use any valid node
+    
+            // Create a new scene with the loaded FXML content
             Scene scene = new Scene(root);
+    
+            // Optionally add a stylesheet if required
+            String css = this.getClass().getResource("/org/example/vncpit252/styleSheet.css").toExternalForm();
+            scene.getStylesheets().add(css);
+    
+            // Set the new scene on the stage and show it
             stage.setScene(scene);
             stage.show();
+    
         } catch (IOException e) {
-            e.printStackTrace(); // Log the exception for debugging
+            // Print detailed information about the error to help with debugging
+            System.err.println("Error loading FXML: " + xml);
+            e.printStackTrace();
         }
     }
+    
+    public void switchToLoadHomePageWithoutEvent() throws Exception {
+        save = SharedData.getSaveInfo();
+        if (save == null) {
+            switchWithNoEvent("getData.fxml");
+        } else {
+            // NOT WORKING
+            // Text txt = new Text(save.getName());
+            // setSafeName(txt.getText()); 
+
+
+
+             // Correct this part, passing the actual text value to the label
+            switchWithNoEvent("load_home_page.fxml");
+            
+        }
+    }
+    
     public void singletinoScean(ActionEvent event) throws Exception {
         SharedData.setPointer(0);
         SharedData.setIntalFlag(0);
@@ -179,7 +220,7 @@ public class Controller {
     
     // end of switchin sean  related methouds 
 
-
+  
 
     // text relatex methouds
     private void stopCurrentAnimation() {
@@ -208,7 +249,7 @@ public class Controller {
         tl.play();  // Start the timeline
 
     }
-    public void UpdateText() {
+    public void UpdateText() throws Exception {
             if (SharedData.getPointer() <= SharedData.getLastFlag()) {
                 
             animationText(dialogStrings[SharedData.getPointer()]);
@@ -234,7 +275,7 @@ public class Controller {
     // end of text related methouds
 
 // exit and save
-    public void exit() {
+    public void exit() throws Exception {
         SharedData.writedOBJ();
         Platform.exit();
     }
@@ -242,21 +283,25 @@ public class Controller {
 
 
 //stil not functional enph
-    @FXML
-    void saveInfo(ActionEvent event) throws IOException {
-        SaveInfo currentInfo = new SaveInfo.SaveInfoBuilder(nameEntryID.getText(), emailEntryID.getText(), "male" /* Change this to ChoiceBox value */).build();
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setUserData(currentInfo);
-        switchScene(event, "load_home_page.fxml");
-    }
+    // @FXML
+    // void saveInfo(ActionEvent event) throws IOException {
+    //     SaveInfo currentInfo = new SaveInfo.SaveInfoBuilder(nameEntryID.getText(), emailEntryID.getText(), "male" /* Change this to ChoiceBox value */).build();
+    //     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    //     stage.setUserData(currentInfo);
+    //     switchScene(event, "load_home_page.fxml");
+    // }
 
-    @FXML
-    void printInfo(ActionEvent event) {
-        stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        System.out.println(stage.getUserData());
-    }
+    // @FXML
+    // void printInfo(ActionEvent event) {
+    //     stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+    //     System.out.println(stage.getUserData());
+    // }
     //// end of stil not functional enph
 
+    public void setSafeName() {
+        save=SharedData.getSaveInfo();
+        savename.setText(save.getName());
+    }
 
 
 
