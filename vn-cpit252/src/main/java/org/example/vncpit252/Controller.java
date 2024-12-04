@@ -108,10 +108,26 @@ public class Controller {
         switchScene(event, "dialog_Show.fxml");
     }
     public void switchToLoeadHomePage(ActionEvent event) throws IOException, Exception {
+        switchScene(event, "load_home_page.fxml");
         
-        switchToLoadHomePageWithoutEvent();
     }
+    //from dialog
+    public void switchToLoadHomePageWithoutEvent1() {
+        try {
+            // Load the FXML file for "load home page"
+            Parent root = FXMLLoader.load(getClass().getResource("load_home_page.fxml"));
 
+            // Retrieve the current stage
+            Stage stage = (Stage) plzwork.getScene().getWindow(); // Replace 'plzwork' with any valid node in your scene
+
+            // Set the new scene
+            Scene scene = new Scene(root);
+            stage.setScene(scene);
+            stage.show();
+        } catch (IOException e) {
+            e.printStackTrace(); // Log the exception for debugging
+        }
+    }
     public void switchWithNoEvent(String xml) {
         try {
             // Load the FXML file for the new scene
@@ -168,6 +184,28 @@ public class Controller {
         switchScene(event, "dialog_Show.fxml");
        
     }
+    public void proScean(ActionEvent event) throws Exception {
+        SharedData.setPointer(10);
+        SharedData.setIntalFlag(10);
+        SharedData.setLastFlag(14);
+        switchScene(event, "dialog_Show.fxml");
+       
+    }
+    public void AdapterScean(ActionEvent event) throws Exception {
+        SharedData.setPointer(15);
+        SharedData.setIntalFlag(15);
+        SharedData.setLastFlag(20);
+        switchScene(event, "dialog_Show.fxml");
+       
+    }
+    public void builderScean(ActionEvent event) throws Exception {
+        SharedData.setPointer(21);
+        SharedData.setIntalFlag(21);
+        SharedData.setLastFlag(25);
+        switchScene(event, "dialog_Show.fxml");
+       
+    }
+
     
     public void singeltonQuiz(ActionEvent event) throws Exception {
         SharedData.setPointer(0);
@@ -257,7 +295,7 @@ public class Controller {
             plzwork.setEditable(false);
             plzwork.setWrapText(true);
         } else {
-            switchToLoadHomePageWithoutEvent();
+            switchToLoadHomePageWithoutEvent1();
         }
     }
     public void goBackText() throws Exception {
@@ -269,7 +307,7 @@ public class Controller {
             plzwork.setEditable(false);
             plzwork.setWrapText(true);
         } else {
-            switchToLoadHomePageWithoutEvent();
+            switchToLoadHomePageWithoutEvent1();
         }
     }
     // end of text related methouds
