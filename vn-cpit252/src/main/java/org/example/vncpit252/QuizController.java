@@ -10,14 +10,6 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-
-
-import javafx.fxml.FXML;
-import javafx.scene.control.Label;
-import javafx.scene.control.RadioButton;
-import javafx.scene.control.ToggleGroup;
-import javafx.scene.control.Button;
-
 public class QuizController {
 
     private int currentIndex = 0;
@@ -26,87 +18,76 @@ public class QuizController {
     private String[] answers;
 
     @FXML
-    private Label questionLabel;
+    private Label questionLabel, feedbackLabel, scoreLabel;
 
     @FXML
-    private RadioButton trueOption;
-
-    @FXML
-    private RadioButton falseOption;
+    private RadioButton trueOption, falseOption;
 
     @FXML
     private ToggleGroup answerToggleGroup;
 
     @FXML
-    private Button nextButton;
-
-    @FXML
-    private Label feedbackLabel;
-
-    @FXML
-    private Button backButton;
-
-    @FXML
-    private Label scoreLabel;
-
-
+    private Button nextButton, backButton;
 
     public void initialize() {
         questions = SharedData.getSublist(SharedData.getQuestionStrings());
         answers = SharedData.getSublist(SharedData.getAnswerStrings());
-
-        if (questions.length > 0) {
-            showQuestion();
-        }
-    }
-
-    private void showQuestion() {
-        questionLabel.setText(questions[currentIndex]);
-        answerToggleGroup.selectToggle(null);  // Clear previous selection
+        if (questions.length > 0) showQuestion();
     }
 
     @FXML
     private void onNextButtonClick() {
-        if (answerToggleGroup.getSelectedToggle() == null) {
+        if (isAnswerNotSelected()) {
             feedbackLabel.setText("Please select 'True' or 'False'.");
             return;
         }
+        Answer();
+        if (hasMoreQuestions())
+            showQuestion();
 
-        String selectedAnswer = ((RadioButton) answerToggleGroup.getSelectedToggle()).getText().trim();
+        else endQuiz();
+    }
 
+    private boolean isAnswerNotSelected() {
+        return answerToggleGroup.getSelectedToggle() == null;
+    }
 
+    private void Answer() {
+        String selectedAnswer = getSelectedAnswer();
         if (selectedAnswer.equalsIgnoreCase(answers[currentIndex].trim())) {
             feedbackLabel.setText("Correct!");
             score++;
         } else {
             feedbackLabel.setText("Incorrect! The correct answer is: " + answers[currentIndex].trim());
         }
-
         currentIndex++;
+    }
 
-        if (currentIndex < questions.length) {
-            showQuestion();
-        } else {
+    private String getSelectedAnswer() {
+        return ((RadioButton) answerToggleGroup.getSelectedToggle()).getText().trim();
+    }
 
-            if (selectedAnswer.equalsIgnoreCase(answers[currentIndex - 1].trim())) {
-                feedbackLabel.setText("Correct! Quiz Completed!");
-            } else {
-                feedbackLabel.setText("Incorrect! The correct answer is: " + answers[currentIndex - 1].trim() + ". Quiz Completed!");
-            }
+    private boolean hasMoreQuestions() {
+        return currentIndex < questions.length;
+    }
 
-            nextButton.setDisable(true);
-            showScore();
-        }
+    private void showQuestion() {
+        questionLabel.setText(questions[currentIndex]);
+        answerToggleGroup.selectToggle(null); // Clear previous selection
+    }
+
+    private void endQuiz() {
+        feedbackLabel.setText("Quiz Completed! Final score: " + score + " / " + questions.length);
+        nextButton.setDisable(true);
+        showScore();
     }
 
     private void showScore() {
-        scoreLabel.setText("Your score: " + score + " / " + questions.length);  // Show final score
+        scoreLabel.setText("Your score: " + score + " / " + questions.length);
     }
-
 
     @FXML
     private void handleBackButton(ActionEvent event) throws IOException {
-        // Go back to home page
         Controller controller = new Controller();
         Stage stage = (Stage) backButton.getScene().getWindow();
         controller.switchScene(event, "load_home_page.fxml");
