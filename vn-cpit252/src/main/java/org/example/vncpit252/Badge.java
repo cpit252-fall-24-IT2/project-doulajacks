@@ -1,6 +1,8 @@
 package org.example.vncpit252;
 
-public class Badge {
+import java.io.Serializable;
+
+public class Badge implements Serializable {
     private final String name;
     private final String description;
     private final String badgeId;

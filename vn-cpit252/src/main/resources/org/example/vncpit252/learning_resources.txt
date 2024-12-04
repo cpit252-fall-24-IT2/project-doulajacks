@@ -1,3 +1,0 @@
-https://youtu.be/M88sDrY66r8 https://www.youtube.com/watch?v=sJ-c3BA-Ypo
-https://refactoring.guru/design-patterns/singleton https://www.patterns.dev/vanilla/singleton-pattern/ https://www.geeksforgeeks.org/singleton-design-pattern/
-https://gitlab.com/cpit252/design-patterns/-/tree/main/01-singleton https://cpit252.gitlab.io/labs/lab-2/
