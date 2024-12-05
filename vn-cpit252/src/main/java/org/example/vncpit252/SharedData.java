@@ -15,6 +15,7 @@ public class SharedData {
     private static String[] questionStrings = null;
     private static String[] answerStrings = null;
     private static String[] videoStrings = null;
+    private static String[] resourcesStrings = null;
     private static SaveInfo saveInfo = null;
     private static int pointer=0;
     private static int intalFlag=0;
@@ -31,6 +32,10 @@ public class SharedData {
 
     public static void setAnswerStrings() throws IOException {
         answerStrings = getArrStrings("/org/example/vncpit252/txt-fiels/answer.txt");
+    }
+
+    public static void setResourcesStrings() throws IOException {
+        resourcesStrings = getArrStrings("/org/example/vncpit252/txt-fiels/learning_resources.txt");
     }
 
     public static void setVideoStrings() throws IOException {
@@ -66,6 +71,8 @@ public class SharedData {
     public static String[] getAnswerStrings() {
         return answerStrings;
     }
+
+    public static String[] getResourcesStrings() { return  resourcesStrings; }
 
     public static String[] getVideoStrings() {
         return videoStrings;

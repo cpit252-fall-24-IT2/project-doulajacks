@@ -5,8 +5,6 @@ import java.util.*;
 
 public class ResourcesHandler {
 
-    private File dataFile = new File("src/main/resources/org/example/vncpit252/txt-fiels/learning_resources.txt");
-
     List<String> readings = new ArrayList<>();
     List<String> codes = new ArrayList<>();
     List<String> videoUrls = new ArrayList<>();
@@ -51,22 +49,16 @@ public class ResourcesHandler {
     }
 
     public void PopulateArray(String str) {
-        try {
-            Scanner sc = new Scanner(dataFile);
-            while (sc.hasNext()) {
-                if (sc.hasNext(str)) {
-                    sc.nextLine(); // store to label later
-                    this.readings = Arrays.asList(sc.nextLine().split(" ")); // convert array to Arraylist
-                    this.codes = Arrays.asList(sc.nextLine().split(" "));
-                    this.videoUrls = Arrays.asList(sc.nextLine().split(" "));
+            String[] dataArray = SharedData.getResourcesStrings();
+            dataArray = dataArray[0].split(System.lineSeparator());
+            for(int i = 0; i < dataArray.length; i++) {
+                if (dataArray[i].equals(str)) {
+                    this.readings = Arrays.asList(dataArray[++i].split(" "));
+                    this.codes = Arrays.asList(dataArray[++i].split(" "));
+                    this.videoUrls = Arrays.asList(dataArray[++i].split(" "));
                     break;
                 }
-                sc.nextLine();
             }
-        }
-        catch (Exception e) {
-            System.out.println(e);
-        }
     }
 
     public List<String> getReadings() {

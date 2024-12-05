@@ -35,6 +35,7 @@ public class Main extends Application {
         SharedData.setQuestionStrings();
         SharedData.setAnswerStrings();
         SharedData.setDialogStrings();
+        SharedData.setResourcesStrings();
         SharedData.readOBJ();
         
 
