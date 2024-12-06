@@ -3,10 +3,10 @@
 This project presents a visual novel-style roadmap specifically designed for CPIT 252 students. It serves as an engaging, goal-oriented guide that helps students navigate their academic journey in a clear, organized, and structured manner, making it easier to track progress and stay focused on their educational objectives.
 ## Features
 
-- **Interactive Visual Novel: A fun and engaging way to manage academic tasks using a visual novel format.
-- **Task Breakdown: Breaks big tasks into smaller, manageable steps.
-- **Progress Tracking: Tracks your progress and keeps you motivated
-- **User-Friendly: Helps students stay organized and focused on their academic goals.
+- Interactive Visual Novel: A fun and engaging way to manage academic tasks using a visual novel format.
+- Task Breakdown: Breaks big tasks into smaller, manageable steps.
+- Progress Tracking: Tracks your progress and keeps you motivated
+- User-Friendly: Helps students stay organized and focused on their academic goals.
 
 ## Requirements
 
