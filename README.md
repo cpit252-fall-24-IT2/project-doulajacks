@@ -11,7 +11,7 @@ This project presents a visual novel-style roadmap specifically designed for CPI
 ## Requirements
 
 - **Java:** Version 8 or later is required to run the application.
-- **No additional dependencies** needed apart from Java Runtime Environment (JRE).
+- **JavaFX: For creating the graphical user interface (GUI). If you're using JavaFX, make sure it's properly configured in your development environment.
 
 ## How to Run the Application
 
