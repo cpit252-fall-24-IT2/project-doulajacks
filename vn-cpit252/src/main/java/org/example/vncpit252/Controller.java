@@ -378,7 +378,7 @@ public class Controller {
         int startIndex = buttonString.indexOf(idName);
         int endIndex = startIndex + (idName.length()+1);
         String buttonID = buttonString.substring(startIndex, endIndex);
-        ResourcesController.setResources(buttonID);
+        ResourcesController.setDesignPattern(buttonID);
 
         switchScene(event, "learning_resources_page.fxml");
     }

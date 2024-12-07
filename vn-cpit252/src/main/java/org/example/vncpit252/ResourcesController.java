@@ -7,11 +7,14 @@ import javafx.scene.text.Font;
 import javafx.scene.web.WebView;
 import javafx.scene.input.MouseEvent;
 import javafx.event.ActionEvent;
+import org.example.vncpit252.ResourcesFactory.*;
 
-import java.awt.*;
+import java.awt.Desktop;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
+
+import java.util.List;
 
 public class ResourcesController {
 
@@ -31,37 +34,44 @@ public class ResourcesController {
     private VBox zoomVboxID;
 
 
-    private static ResourcesHandler resources;
+    private static ResourceDesignPattern designPattern = ResourceDesignPattern.Singleton; // default
 
-    public static void setResources(String id) {
+    public static void setDesignPattern(String id) {
         int idnum = Character.getNumericValue(id.charAt(id.length()-1));
-        System.out.println(idnum);
-        resources = new ResourcesHandler(idnum);
+        switch (idnum) {
+            case 1: designPattern = ResourceDesignPattern.Singleton; break;
+            case 2: designPattern = ResourceDesignPattern.Prototype; break;
+            case 3: designPattern = ResourceDesignPattern.Adapter; break;
+            case 4: designPattern = ResourceDesignPattern.Builder; break;
+            case 5: designPattern = ResourceDesignPattern.Proxy; break;
+            case 6: designPattern = ResourceDesignPattern.Flyweight; break;
+            case 7: designPattern = ResourceDesignPattern.Decorator; break;
+            case 8: designPattern = ResourceDesignPattern.Observer; break;
+        }
     }
 
     @FXML
     public void initialize() {
-        webHolderID.setContextMenuEnabled(true); // this line fixes a bug
 
-        for (String link: resources.getReadings()) {
-            Hyperlink hl = createHyperLink(link);
-            setOnActionToOpenBrowser(hl);
-            readingsVboxID.getChildren().add(hl);
-        }
+        ResourceFactory factory = new ResourceFactory();
 
-        for (String link: resources.getCodes()) {
-            Hyperlink hl = createHyperLink(link);
-            setOnActionToOpenBrowser(hl);
-            codeVboxID.getChildren().add(hl);
-        }
+        ResourceType rs = factory.createResource("Reading", designPattern);
+        defaultHyperLinks(rs.getListOfHyperLinks());
+        setOnActionToOpenBrowser(rs.getListOfHyperLinks());
+        readingsVboxID.getChildren().addAll(rs.getListOfHyperLinks());
 
-        for (String link: resources.getVideoUrls()) {
-            Hyperlink hl = createHyperLink(link);
-            setOnActionToSwitchingVideo(hl);
-            videosVboxID.getChildren().add(hl);
-        }
+        rs = factory.createResource("Code", designPattern);
+        defaultHyperLinks(rs.getListOfHyperLinks());
+        setOnActionToOpenBrowser(rs.getListOfHyperLinks());
+        codeVboxID.getChildren().addAll(rs.getListOfHyperLinks());
 
-        String defaultVideo = resources.getVideoUrls().getFirst();
+        rs = factory.createResource("Video", designPattern);
+        defaultHyperLinks(rs.getListOfHyperLinks());
+        setOnActionToSwitchingVideo(rs.getListOfHyperLinks());
+        videosVboxID.getChildren().addAll(rs.getListOfHyperLinks());
+
+
+        String defaultVideo = rs.getListOfHyperLinks().getFirst().getText();
         defaultWebview(defaultVideo);
 
     }
@@ -103,33 +113,36 @@ public class ResourcesController {
         controller.switchScene(event, "load_home_page.fxml");
     }
 
-    private Hyperlink createHyperLink(String link) {
-        Hyperlink hl = new Hyperlink(link);
-
-        hl.setFont(Font.font("System", 15));
-        return hl;
+    private void defaultHyperLinks(List<Hyperlink> list) {
+        for (Hyperlink hl : list) {
+            hl.setFont(Font.font("System", 15));
+        }
     }
 
-    private void setOnActionToOpenBrowser(Hyperlink hl) {
-        // open link in default browser
-        hl.setOnAction(mouseEvent -> {
-            if (Desktop.isDesktopSupported()) {
-                try {
-                    Desktop.getDesktop().browse(new URI(hl.getText()));
-                } catch (IOException e) {
-                    throw new RuntimeException(e);
-                } catch (URISyntaxException e) {
-                    throw new RuntimeException(e);
+    private void setOnActionToOpenBrowser(List<Hyperlink> list) {
+        for (Hyperlink hl : list) {
+            // open link in default browser
+            hl.setOnAction(mouseEvent -> {
+                if (Desktop.isDesktopSupported()) {
+                    try {
+                        Desktop.getDesktop().browse(new URI(hl.getText()));
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    } catch (URISyntaxException e) {
+                        throw new RuntimeException(e);
+                    }
                 }
-            }
-        });
+            });
+        }
     }
 
-    private void setOnActionToSwitchingVideo(Hyperlink hl) {
+    private void setOnActionToSwitchingVideo(List<Hyperlink> list) {
         // switching videos functionality
-        hl.setOnAction(mouseEvent -> {
-            webHolderID.getEngine().load(hl.getText());
-        });
+        for (Hyperlink hl : list) {
+            hl.setOnAction(mouseEvent -> {
+                webHolderID.getEngine().load(hl.getText());
+            });
+        }
     }
 
     private void defaultWebview(String defaultVideo) {
